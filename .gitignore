@@ -1,1 +1,9 @@
-log
+*~
+webrat-*
+log/
+tmp/
+db/test.sqlite3
+db/development.sqlite3
+*.log
+coverage
+.DS_Store

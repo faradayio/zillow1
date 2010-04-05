@@ -7,3 +7,6 @@ ZWS_ID = 'X1-ZWz1c7urejqkgb_7x5fi'
 
 # Retrieve recently-sold listings for Atlanta, GA in JSON:
 # just use 'rsh' instead of 'nfs'
+
+do
+  StatisticalArea.data_mine!
