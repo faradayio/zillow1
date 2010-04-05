@@ -9,10 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100405155954) do
+ActiveRecord::Schema.define(:version => 20100405185120) do
 
-  create_table "statistical_areas", :force => true do |t|
-    t.string   "cbsa_code"
+  create_table "statistical_areas", :id => false, :force => true do |t|
+    t.integer  "cbsa_code",  :limit => 255
     t.string   "name"
     t.integer  "population"
     t.datetime "created_at"
