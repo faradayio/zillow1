@@ -15,12 +15,12 @@ class StatisticalArea < ActiveRecord::Base
   
   def fetch_and_store_listings!
     ZillowSearch.new(url_encoded_name).results.each do |result|
-      listing = listings.create :zpid => Listing.zpid_from_url(result['detailPageLink']),
+      listing = listings.find_or_create_by_zpid( Listing.zpid_from_url(result['detailPageLink']) ).update_attributes(
                                 :zipcode => result['address']['zipcode'],
                                 :bathrooms => result['bathrooms'].to_f,
                                 :bedrooms => result['bedrooms'].to_i,
                                 :zillow_home_type => result['homeType'],
-                                :floorspace => result['finishedSqFt'].to_i.nonzero?
+                                :floorspace => result['finishedSqFt'].to_i.nonzero? )
       listing.calculate_emission!
     end
   end
