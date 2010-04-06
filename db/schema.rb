@@ -9,12 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100405185120) do
+ActiveRecord::Schema.define(:version => 20100405213227) do
+
+  create_table "listings", :id => false, :force => true do |t|
+    t.integer  "zpid"
+    t.string   "statistical_area_id"
+    t.string   "zipcode"
+    t.float    "bathrooms"
+    t.integer  "bedrooms"
+    t.integer  "floorspace"
+    t.string   "zillow_home_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "emission"
+  end
 
   create_table "statistical_areas", :id => false, :force => true do |t|
-    t.integer  "cbsa_code",  :limit => 255
     t.string   "name"
-    t.integer  "population"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

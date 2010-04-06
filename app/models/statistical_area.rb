@@ -1,17 +1,27 @@
 class StatisticalArea < ActiveRecord::Base
-  set_primary_key :cbsa_code
+  set_primary_key :name
   
   has_many :listings
   
   data_miner do
-    import 'U.S. Census data', :url => 'http://www.census.gov/popest/metro/files/2009/CBSA-EST2009-alldata.csv', :select => lambda { |row| row['CBSA'].present? and row['MDIV'].blank? and row['STCOU'].blank? } do
-      key   'cbsa_code', :field_name => 'CBSA'
-      store 'name', :field_name => 'NAME'
-      store 'population', :field_name => 'POPESTIMATE2009' 
+    import 'Zillow statistical areas', :url => 'http://www.zillow.com/static/xls/Zestimate_Accuracy_December_31_2009.xls', :sheet => 2 do
+      key 'name', :field_name => 'CMSA'
     end
   end
   
-  def zillow_region_name
-    name.sub(',')
+  def url_encoded_name
+    name.sub(',', '').sub(' ', '+')
+  end
+  
+  def fetch_and_store_listings!
+    ZillowSearch.new(url_encoded_name).results.each do |result|
+      listing = listings.create :zpid => Listing.zpid_from_url(result['detailPageLink']),
+                                :zipcode => result['address']['zipcode'],
+                                :bathrooms => result['bathrooms'].to_f,
+                                :bedrooms => result['bedrooms'].to_i,
+                                :zillow_home_type => result['homeType'],
+                                :floorspace => result['finishedSqFt'].to_i.nonzero?
+      listing.calculate_emission!
+    end
   end
 end
