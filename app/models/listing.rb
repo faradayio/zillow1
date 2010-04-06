@@ -18,6 +18,14 @@ class Listing < ActiveRecord::Base
     end
   end
   
+  def full_bathrooms
+    bathrooms.floor
+  end
+  
+  def half_bathrooms
+    (bathrooms % 1 * 2).ceil
+  end
+  
   class << self
     def zpid_from_url(url)
       url.match(/(\d*)_zpid/)[1].to_i
