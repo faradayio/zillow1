@@ -21,7 +21,7 @@ class StatisticalArea < ActiveRecord::Base
                                 :bedrooms => result['bedrooms'].to_i,
                                 :zillow_home_type => result['homeType'],
                                 :floorspace => result['finishedSqFt'].to_i.nonzero? )
-      listing.calculate_emission!
+      #listing.calculate_emission!
     end
   end
 end
