@@ -15,14 +15,20 @@ class StatisticalArea < ActiveRecord::Base
   
   def fetch_and_store_listings!
     ZillowSearch.new(url_encoded_name).results.each do |result|
-      next if %w(lot multiFamily).include? result['homeType']
-      listing = listings.find_or_create_by_zpid( Listing.zpid_from_url(result['detailPageLink']) ).update_attributes(
+      next if %w(lot multiFamily).include? result['homeType'] # skip irrelevant home types
+      listings.find_or_create_by_zpid( Listing.zpid_from_url(result['detailPageLink']) ).tap { |l| l.update_attributes(
                                 :zipcode => result['address']['zipcode'],
                                 :bathrooms => result['bathrooms'].to_f.nonzero?,
                                 :bedrooms => result['bedrooms'].to_i.nonzero?,
                                 :zillow_home_type => (result['homeType'] == 'unknown' ? nil : result['homeType']),
-                                :floorspace => result['finishedSqFt'].to_i.nonzero? )
-      #listing.calculate_emission!
+                                :floorspace => result['finishedSqFt'].to_i.nonzero? ) }.calculate_emission!
+    end
+  end
+  
+  def self.fetch_and_store_listings!
+    all.each do |statistical_area|
+      statistical_area.fetch_and_store_listings!
+      sleep 10
     end
   end
 end
