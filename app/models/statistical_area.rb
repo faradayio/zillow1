@@ -31,4 +31,8 @@ class StatisticalArea < ActiveRecord::Base
       sleep 10
     end
   end
+  
+  def self.leaderboard
+    all.sort_by { |s| s.listings.today.average(:emission) }
+  end
 end
