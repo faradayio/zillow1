@@ -21,7 +21,7 @@ class StatisticalArea < ActiveRecord::Base
                                 :bathrooms => result['bathrooms'].to_f.nonzero?,
                                 :bedrooms => result['bedrooms'].to_i.nonzero?,
                                 :zillow_home_type => (result['homeType'] == 'unknown' ? nil : result['homeType']),
-                                :floorspace => result['finishedSqFt'].to_i.nonzero? ) }.calculate_emission!
+                                :floorspace => result['finishedSqFt'].to_i.nonzero? ) }.tap(&:touch).calculate_emission!
     end
   end
   
