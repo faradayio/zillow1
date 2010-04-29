@@ -1,2 +1,4 @@
       <dt class="name">Name</dt>
       <dd class="name"><%= link_to_zillow_statistical_area statistical_area %></dd>
+      <dt class="emission">Emission</dt>
+      <dd class="emission"><%=number_with_delimiter statistical_area.listings.today.average(:emission).round.to_i %> kg CO<sub>2</sub> <span id="<%= safe_dom_id(statistical_area) + '_sparkline' %>" class="sparkline"></span><%= sparkline_tag safe_dom_id(statistical_area) + '_sparkline', statistical_area.emissions.map { |e| e - statistical_area.emissions.min }, :color => '#ccc' %></dd>

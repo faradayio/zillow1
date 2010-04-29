@@ -15,8 +15,9 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
   # config.gem 'remote_table'
 
-  config.gem 'data_miner', :version => '0.4.22'
+  config.gem 'data_miner', :version => '0.4.24'
   config.gem 'weary', :version => '0.7.2'
+  config.gem 'grafico', :version => '0.2.3'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

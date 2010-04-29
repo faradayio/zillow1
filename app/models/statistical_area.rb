@@ -25,6 +25,14 @@ class StatisticalArea < ActiveRecord::Base
     end
   end
   
+  def days
+    listings.map { |l| l.updated_at.to_date }.uniq.sort
+  end
+  
+  def emissions
+    days.map { |d| listings.on(d).average(:emission).round.to_i }
+  end
+  
   def self.fetch_and_store_listings!
     all.each do |statistical_area|
       statistical_area.fetch_and_store_listings!

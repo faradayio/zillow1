@@ -4,6 +4,7 @@ class Listing < ActiveRecord::Base
   belongs_to :statistical_area
   
   named_scope :today, :conditions => { :updated_at => Date.today.to_time..Date.today.tomorrow.to_time }
+  named_scope :on, lambda { |date| { :conditions => { :updated_at => date.to_time..date.tomorrow.to_time } } }
   
   def calculate_emission!
     update_attributes :emission => EmissionEstimate.of(self)
