@@ -13,6 +13,10 @@ class StatisticalArea < ActiveRecord::Base
     name.sub(',', '').gsub(' ', '+')
   end
   
+  def identifier
+    name.downcase.gsub(/,/, '').gsub(/[ ]/, '_')
+  end
+  
   def fetch_and_store_listings!
     ZillowSearch.new(url_encoded_name).results.each do |result|
       next if %w(lot multiFamily).include? result['homeType'] # skip irrelevant home types
