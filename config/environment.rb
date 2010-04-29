@@ -13,8 +13,9 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
+  # config.gem 'remote_table'
 
-  config.gem 'data_miner', :version => '0.4.13'
+  config.gem 'data_miner', :version => '0.4.22'
   config.gem 'weary', :version => '0.7.2'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
