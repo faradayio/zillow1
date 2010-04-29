@@ -50,3 +50,17 @@ ol.statistical_areas li dl dt {
   display: inline-block;
   height: 1em;
 }
+
+#graph {
+  width: 920px;
+  height: 400px;
+  position: relative;
+  left: -11px;
+  background: #eee;
+}
+
+#wrapper {
+  width: 890px;
+  margin: 0 auto;
+  overflow: hidden;
+}

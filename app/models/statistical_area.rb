@@ -33,8 +33,16 @@ class StatisticalArea < ActiveRecord::Base
     listings.map { |l| l.updated_at.to_date }.uniq.sort
   end
   
+  def self.days
+    all.map(&:days).flatten.uniq
+  end
+  
   def emissions
-    days.map { |d| listings.on(d).average(:emission).round.to_i }
+    self.class.days.map { |d| (l = listings.on(d)).any? ? l.average(:emission).round.to_i : nil }
+  end
+  
+  def self.emissions
+    all.inject({}) { |memo, s| memo[s.identifier] = s.emissions; memo }
   end
   
   def self.fetch_and_store_listings!

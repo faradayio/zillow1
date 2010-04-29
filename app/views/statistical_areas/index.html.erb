@@ -1,1 +1,17 @@
-<%= render :partial => 'ol', :locals => { :statistical_areas => @leaderboard } %>
+<div id="wrapper">
+  <div id="graph"></div>
+  <%= render :partial => 'ol', :locals => { :statistical_areas => @leaderboard } %>
+</div>
+
+
+<%= line_graph_tag 'graph', StatisticalArea.emissions, :stroke_width => 3,
+                                                       :datalabels => StatisticalArea.all.inject({}) { |memo, s| memo[s.identifier] = s.name; memo },
+                                                       :draw_axis => false, :background_color => '#eee',
+                                                       :draw_hovers => true,
+                                                       :hover_color => 'red',
+                                                       :grid => false,
+                                                       :show_horizontal_labels => false,
+                                                       :show_vertical_labels => false,
+                                                       :left_padding => 0,
+                                                       :right_padding => 0,
+                                                       :plot_padding => 0 %>
