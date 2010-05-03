@@ -81,7 +81,7 @@ ol.statistical_areas li dl dd.name {
 
 #graph {
   width: 920px;
-  height: 400px;
+  height: 350px;
   position: relative;
   left: -11px;
   background: #333;
@@ -128,7 +128,7 @@ ol.statistical_areas li dl dd.name {
   background: url(images/header.png);
   width: 960px;
   margin: 0 auto;
-  height: 285px;
+  height: 250px;
 }
 
 #header h1 {
