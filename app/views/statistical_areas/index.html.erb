@@ -1,9 +1,32 @@
-<div id="wrapper">
-  <div id="graph"></div>
-  <%= render :partial => 'ol', :locals => { :statistical_areas => @leaderboard } %>
+<div id="container">
+  <div id="wrapper">
+    <div class="frame top"></div>
+    <div id="graph"></div>
+    <div class="frame bottom"></div>
+  </div>
 </div>
 
+<div id="content">
+<%= render :partial => 'ol', :locals => { :statistical_areas => @leaderboard } %>
+<ul id="copy">
+  <li>
+    <h2>What's going on here?</h2>
+    <p>We're ranking U.S. cities based on the greenness of their available housing stock.</p>
+  </li>
+  <li>
+    <h2>How does it work?</h2>
+    <p>Every day we look at new for-sale listings for the <a href="http://www.zillow.com/static/xls/Zestimate_Accuracy_December_31_2009.xls">top 28 markets</a> on <a href="http://zillow.com">Zillow</a>, a real-estate listings site.</p>
+    <p>We then submit each of the listings to <a href="http://brighterplanet.com">Brighter Planet</a>'s <a href="http://carbon.brighterplanet.com">emission estimates web service</a> and find an average annual carbon footprint for a home in each city.</p>
+    <p><%= image_tag 'http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_150x40.gif', :alt => 'Powered by Zillow' %></p>
+</ul>
+<p id="more"><%= link_to_function 'Show all cities', '$$("ol.statistical_areas li").invoke("show"); this.up().hide()' %><p>
+</div>
 
+<div id="footer">
+  <p>Footer about Brighter Planet will go here</p>
+</div>
+
+<% content_for :bottom do %>
 <%= line_graph_tag 'graph', StatisticalArea.emissions, :stroke_width => 3,
                                                        :datalabels => StatisticalArea.all.inject({}) { |memo, s| memo[s.identifier] = s.name; memo },
                                                        :draw_axis => false, :background_color => '#eee',
@@ -14,4 +37,9 @@
                                                        :show_vertical_labels => false,
                                                        :left_padding => 0,
                                                        :right_padding => 0,
+                                                       :background_color => '#333',
                                                        :plot_padding => 0 %>
+<script type="text/javascript">
+$$('ol.statistical_areas li').slice(10).invoke('hide');
+</script>
+<% end %>

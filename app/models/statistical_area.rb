@@ -14,7 +14,7 @@ class StatisticalArea < ActiveRecord::Base
   end
   
   def identifier
-    name.downcase.gsub(/,/, '').gsub(/[ ]/, '_')
+    name.downcase.gsub(/[,\.]/, '').gsub(/[ -]/, '_')
   end
   
   def fetch_and_store_listings!

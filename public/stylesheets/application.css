@@ -31,6 +31,7 @@ body {
   margin: 0;
   font-size: 12px;
   line-height: 1.6;
+  background: url(images/bg.png) repeat-x;
 }
 
 a {
@@ -38,17 +39,44 @@ a {
 }
 
 ol.statistical_areas {
-  margin: 0 0 0 3em;
+  list-style: none;
+  width: 400px;
+  float: left;
+}
+
+ol.statistical_areas li dl {
+  overflow: auto;
 }
 
 ol.statistical_areas li dl dt {
   display: none;
 }
 
+ol.statistical_areas li dl dd.time_series {
+  float: right;
+  width: 150px;
+  padding: 15px 0 0;
+}
+
+ol.statistical_areas li dl dd.rank {
+  float: left;
+  width: 2em;
+  font-size: 36px;
+  font-weight: bold;
+  color: gray;
+  text-align: right;
+  margin: 0 10px 0 0;
+}
+
+ol.statistical_areas li dl dd.name {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
 .sparkline {
-  width: 50px;
+  width: 150px;
   display: inline-block;
-  height: 1em;
+  height: 24px;
 }
 
 #graph {
@@ -56,11 +84,100 @@ ol.statistical_areas li dl dt {
   height: 400px;
   position: relative;
   left: -11px;
-  background: #eee;
+  background: #333;
+  -moz-box-shadow: inside 0 0 10px black;
+}
+
+.frame {
+  background: #333;
+  height: 5px;
+}
+
+.frame.top {
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  -moz-box-shadow: inside 0 1px 0 black;
+}
+
+.frame.bottom{
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+#container {
+  background: #69BD45;
+  padding: 0 0 30px;
+  overflow: auto;
 }
 
 #wrapper {
   width: 890px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+#content {
+  width: 960px;
+  margin: 20px auto;
+  overflow: auto;
+}
+
+#header {
+  background: url(images/header.png);
+  width: 960px;
+  margin: 0 auto;
+  height: 285px;
+}
+
+#header h1 {
+  display: none;
+}
+
+ul#copy {
+  width: 500px;
+  float: left;
+  margin: 0 0 0 60px;
+  list-style: none;
+}
+
+ul#copy li {
+  margin: 0 0 20px;
+}
+
+ul#copy li p {
+  font-size: 12px;
+  margin: 0 0 10px 0;
+}
+
+p#more {
+  float: left;
+  width: 400px;
+  clear: left;
+  margin: 15px 0 0;
+}
+
+p#more a {
+  border: 1px outset #eee;
+  -moz-border-radius: 3px;
+  -moz-box-shadow: inside 3px 3px 3px silver;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  color: gray;
+  padding: 15px 0;
+  background: #eee;
+  text-decoration: none;
+}
+
+#footer {
+  background: #444;
+  color: silver;
+  padding: 15px 0;
+}
+
+#footer p {
+  width: 906px;
+  margin: 0 auto;
 }
