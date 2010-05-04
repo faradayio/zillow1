@@ -19,6 +19,8 @@ class StatisticalArea < ActiveRecord::Base
     name.downcase.gsub(/[,\.]/, '').gsub(/[ -]/, '_')
   end
   
+  # TODO andy add a different timestamp, updated_at is not trustworthy for the time series
+  # make sure to change the references everywhere in the code
   def fetch_and_store_listings!
     ZillowSearch.new(url_encoded_name).results.each do |result|
       next if %w(lot multiFamily).include? result['homeType'] # skip irrelevant home types
