@@ -1,6 +1,8 @@
 class StatisticalArea < ActiveRecord::Base
   set_primary_key :name
   
+  extend Cacheable
+
   has_many :listings
   
   data_miner do
@@ -29,30 +31,36 @@ class StatisticalArea < ActiveRecord::Base
     end
   end
   
-  def days
-    listings.map { |l| l.updated_at.to_date }.uniq.sort
+  def average_emission(day)
+    (l = listings.on(day)).any? ? l.average(:emission) : nil
   end
-  
-  def self.days
-    all.map(&:days).flatten.uniq
-  end
+  cacheify :average_emission, :ttl => 1.hour
   
   def emissions
-    self.class.days.map { |d| (l = listings.on(d)).any? ? l.average(:emission).round.to_i : nil }
+    self.class.days.map { |d| average_emission d }
   end
-  
-  def self.emissions
-    all.inject({}) { |memo, s| memo[s.identifier] = s.emissions; memo }
-  end
-  
-  def self.fetch_and_store_listings!
-    all.each do |statistical_area|
-      statistical_area.fetch_and_store_listings!
-      sleep 10
+
+  class << self
+    extend Cacheable
+    
+    def days
+      connection.select_values('SELECT DISTINCT DATE(updated_at) FROM listings ORDER BY updated_at').map { |raw| Date.parse raw }
     end
-  end
+    cacheify :days, :ttl => 1.hour
   
-  def self.leaderboard
-    all.sort_by { |s| s.listings.today.average(:emission) }
+    def emissions
+      all.inject({}) { |memo, s| memo[s.identifier] = s.emissions; memo }
+    end
+  
+    def fetch_and_store_listings!
+      all.each do |statistical_area|
+        statistical_area.fetch_and_store_listings!
+        sleep 10
+      end
+    end
+  
+    def leaderboard
+      all.sort_by { |s| s.average_emission Date.today }
+    end
   end
 end

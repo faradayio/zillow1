@@ -4,4 +4,4 @@
       <dt class="name">Name</dt>
       <dd class="name"><%= link_to_zillow_statistical_area statistical_area %></dd>
       <dt class="emission">Emission</dt>
-      <dd class="emission"><%=number_with_delimiter statistical_area.listings.today.average(:emission).round.to_i %> kg CO<sub>2</sub>/yr</dd>
+      <dd class="emission"><%=number_with_delimiter statistical_area.average_emission(Date.today).round.to_i %> kg CO<sub>2</sub>/yr</dd>
