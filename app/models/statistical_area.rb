@@ -44,7 +44,7 @@ class StatisticalArea < ActiveRecord::Base
     extend Cacheable
     
     def days
-      connection.select_values('SELECT DISTINCT DATE(updated_at) FROM listings ORDER BY updated_at').map { |raw| Date.parse raw }
+      connection.select_values('SELECT DISTINCT DATE(listings.updated_at) AS d FROM listings ORDER BY d').map { |raw| Date.parse raw }
     end
     cacheify :days, :ttl => 1.hour
   
