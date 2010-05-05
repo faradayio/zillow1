@@ -15,10 +15,10 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
   # config.gem 'remote_table'
 
-  config.gem 'data_miner'
-  config.gem 'weary'
-  config.gem 'grafico'
-  config.gem 'cacheable'
+  config.gem 'data_miner', :version => '0.4.24'
+  config.gem 'weary', :version => '0.7.2'
+  config.gem 'grafico', :version => '0.2.3'
+  config.gem 'cacheable', :version => '0.1.8'
 
   # http://docs.heroku.com/memcache
   config.gem 'memcached', :version => '0.19.2' # 19.3 breaks a lot

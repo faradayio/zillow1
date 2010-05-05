@@ -2,6 +2,7 @@ class StatisticalArea < ActiveRecord::Base
   set_primary_key :name
   
   extend Cacheable
+  extend ActiveSupport::Memoizable
 
   has_many :listings
   
@@ -37,18 +38,20 @@ class StatisticalArea < ActiveRecord::Base
     (l = listings.on(day)).any? ? l.average(:emission) : nil
   end
   cacheify :average_emission, :ttl => 1.hour
+  memoize :average_emission
   
   def emissions
     self.class.days.map { |d| average_emission d }
   end
 
   class << self
-    extend Cacheable
+    extend ActiveSupport::Memoizable
     
     def days
       connection.select_values('SELECT DISTINCT DATE(listings.updated_at) AS d FROM listings ORDER BY d').map { |raw| Date.parse raw }
     end
     cacheify :days, :ttl => 1.hour
+    memoize :days
   
     def emissions
       all.inject({}) { |memo, s| memo[s.identifier] = s.emissions; memo }
@@ -62,7 +65,7 @@ class StatisticalArea < ActiveRecord::Base
     end
   
     def leaderboard
-      all.sort_by { |s| s.average_emission Date.today }
+      all.select { |s| s.average_emission(Date.today).present? }.sort_by { |s| s.average_emission Date.today }
     end
   end
 end
