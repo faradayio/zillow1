@@ -13,7 +13,7 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-  # config.gem 'remote_table'
+  # config.gem 'remote_table', :version => '0.2.19'
 
   config.gem 'data_miner', :version => '0.4.24'
   config.gem 'weary', :version => '0.7.2'
