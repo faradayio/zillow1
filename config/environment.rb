@@ -13,12 +13,13 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-  # config.gem 'remote_table', :version => '0.2.19'
+  # config.gem 'errata', :version => '0.2.1'
+  # config.gem 'remote_table', :version => '0.2.20'
 
-  config.gem 'data_miner', :version => '0.4.24'
+  config.gem 'data_miner', :version => '0.4.26'
   config.gem 'weary', :version => '0.7.2'
   config.gem 'grafico', :version => '0.2.3'
-  config.gem 'cacheable', :version => '0.1.8'
+  config.gem 'cacheable', :version => '0.1.9'
 
   # http://docs.heroku.com/memcache
   config.gem 'memcached', :version => '0.19.2' # 19.3 breaks a lot

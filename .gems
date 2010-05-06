@@ -1,5 +1,5 @@
-data_miner --version  '0.4.24'
+data_miner --version  '0.4.26'
 weary --version  '0.7.2'
 grafico --version  '0.2.3'
 memcached --version '0.19.2'
-cacheable --version '0.1.8'
+cacheable --version '0.1.9'
