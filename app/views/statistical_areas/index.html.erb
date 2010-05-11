@@ -15,13 +15,21 @@
   </li>
   <li>
     <h2>How does it work?</h2>
-    <p>Every day we look at new for-sale listings for the <a href="http://www.zillow.com/static/xls/Zestimate_Accuracy_December_31_2009.xls">top 28 markets</a> on <a href="http://zillow.com">Zillow</a>, a real-estate listings site.</p>
-    <p>We then submit each of the listings to <a href="http://brighterplanet.com">Brighter Planet</a>'s <a href="http://carbon.brighterplanet.com">emission estimates web service</a> and find an average annual carbon footprint for a home in each city.</p>
+    <p>Every day our system looks at new for-sale listings for the <a href="http://www.zillow.com/static/xls/Zestimate_Accuracy_December_31_2009.xls">top 28 markets</a> on <a href="http://zillow.com">Zillow</a>, a real-estate listings site.</p>
+    <p>It then submits each of the listings to <a href="http://brighterplanet.com">Brighter Planet</a>'s <a href="http://carbon.brighterplanet.com">emission estimates web service</a> and determines an average annual carbon footprint for a home in each city.</p>
   </li>
   <li>
     <h2>But how does it <i>really</i> work?</h2>
     <p>Zillow listings like <a href="http://www.zillow.com/homedetails/890-Glenwood-Park-Dr-SE-Atlanta-GA-30316/82390747_zpid/">this one in Atlanta</a> contain a number of useful property attributes, namely <strong>zip code</strong>, <strong>bedrooms</strong>, <strong>bathrooms</strong>, <strong>sqft</strong>, and <strong>property type</strong>.</p>
     <p>These attributes map to characteristics defined on Brighter Planet's <a href="http://carbon.brighterplanet.com/residences/options">carbon model for residences</a>. For a detailed sample methodology, see <a href="http://carbon.brighterplanet.com/residences?residence[zip_code][name]=30316&residence[floorspace_estimate]=2350&residence[residence_class][name]=Single-family+detached+house+%28a+one-family+house+detached+from+any+other+house%29">our analysis of the Atlanta house</a>.</p>
+  </li>
+  <li>
+    <h2>So you can figure out how green a house is just by looking at those five things?</h2>
+    <p>Indeed. . . </p>
+  </li>
+  <li>
+    <h2>Is Zillow really great for letting you guys do this?</h2>
+    <p>Yes, they are</p>
     <p><%= image_tag 'http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_150x40.gif', :alt => 'Powered by Zillow' %></p>
   </li>
 </ul>
