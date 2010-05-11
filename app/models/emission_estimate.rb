@@ -9,7 +9,7 @@ class EmissionEstimate < Weary::Base
   class << self
     def of(listing)
       new.emission( :'residence[zip_code][name]' => listing.zipcode,
-                    :'residence[floorspace_estimate]' => listing.floorspace,
+                    :'residence[floorspace_estimate]' => listing.floorspace.square_feet.to(:square_meters),
                     :'residence[residence_class][name]' => listing.residence_class ).perform.parse['emission']
     end
   end
