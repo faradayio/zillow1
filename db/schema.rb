@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100405213227) do
+ActiveRecord::Schema.define(:version => 20100511171646) do
+
+  create_table "appearances", :id => false, :force => true do |t|
+    t.integer  "listing_id"
+    t.datetime "appeared_at"
+    t.string   "composite_identifier"
+  end
 
   create_table "listings", :id => false, :force => true do |t|
     t.integer  "zpid"
