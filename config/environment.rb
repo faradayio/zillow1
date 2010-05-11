@@ -20,6 +20,7 @@ Rails::Initializer.run do |config|
   config.gem 'weary', :version => '0.7.2'
   config.gem 'grafico', :version => '0.2.3'
   config.gem 'cacheable', :version => '0.1.12'
+  config.gem 'conversions', :version => '1.4.5'
 
   # http://docs.heroku.com/memcache
   config.gem 'memcached', :version => '0.19.2' # 19.3 breaks a lot
