@@ -32,6 +32,7 @@ class StatisticalArea < ActiveRecord::Base
                                 :zillow_home_type => (result['homeType'] == 'unknown' ? nil : result['homeType']),
                                 :floorspace => result['finishedSqFt'].to_i.nonzero? ) }.tap(&:touch).calculate_emission!
     end
+    clear_cache
   end
   
   def average_emission(day)
@@ -42,6 +43,11 @@ class StatisticalArea < ActiveRecord::Base
   
   def emissions
     self.class.days.map { |d| average_emission d }
+  end
+  
+  def clear_cache
+    unmemoize_all
+    uncacheify_all
   end
 
   class << self
@@ -56,12 +62,18 @@ class StatisticalArea < ActiveRecord::Base
     def emissions
       all.inject({}) { |memo, s| memo[s.identifier] = s.emissions; memo }
     end
+
+    def clear_cache
+      unmemoize_all
+      uncacheify_all
+    end
   
     def fetch_and_store_listings!
       all.each do |statistical_area|
         statistical_area.fetch_and_store_listings!
         sleep 10
       end
+      clear_cache
     end
   
     def leaderboard
