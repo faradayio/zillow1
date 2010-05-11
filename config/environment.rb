@@ -19,7 +19,7 @@ Rails::Initializer.run do |config|
   config.gem 'data_miner', :version => '0.4.27'
   config.gem 'weary', :version => '0.7.2'
   config.gem 'grafico', :version => '0.2.3'
-  config.gem 'cacheable', :version => '0.1.10'
+  config.gem 'cacheable', :version => '0.1.12'
 
   # http://docs.heroku.com/memcache
   config.gem 'memcached', :version => '0.19.2' # 19.3 breaks a lot
