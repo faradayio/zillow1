@@ -4,7 +4,6 @@ class EmissionEstimate < Weary::Base
     resource.url = 'http://carbon.brighterplanet.com/residences.json'
     resource.requires = [ :'residence[zip_code][name]' ]
     resource.with = [ :'residence[floorspace_estimate]', :'residence[residence_class][name]', :'residence[bedrooms]', :'residence[bathrooms]' ]
-    puts resource.inspect
   end
 
   class << self
