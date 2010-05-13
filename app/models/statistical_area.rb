@@ -76,7 +76,7 @@ class StatisticalArea < ActiveRecord::Base
     end
   
     def leaderboard
-      all.select { |s| s.average_emission(days.last).present? }.sort_by { |s| s.average_emission Date.today }
+      all.select { |s| s.average_emission(days.last).present? }.sort_by { |s| s.average_emission days.last }
     end
   end
 end

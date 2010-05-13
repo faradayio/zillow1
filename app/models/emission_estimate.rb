@@ -4,15 +4,17 @@ class EmissionEstimate < Weary::Base
     resource.url = 'http://carbon.brighterplanet.com/residences.json'
     resource.requires = [ :'residence[zip_code][name]' ]
     resource.with = [ :'residence[floorspace_estimate]', :'residence[residence_class][name]', :'residence[bedrooms]', :'residence[bathrooms]' ]
+    puts resource.inspect
   end
 
   class << self
     def of(listing)
-      new.emission( :'residence[zip_code][name]' => listing.zipcode,
-                    :'residence[floorspace_estimate]' => listing.floorspace.square_feet.to(:square_meters),
-                    :'residence[bedrooms]' => listing.bedrooms,
-                    :'residence[bathrooms]' => listing.bathrooms,
-                    :'residence[residence_class][name]' => listing.residence_class ).perform.parse['emission']
+      request = { :'residence[zip_code][name]' => listing.zipcode }
+      request[:'residence[floorspace_estimate]'] = listing.floorspace.square_feet.to(:square_meters) if listing.floorspace
+      request[:'residence[bedrooms]'] = listing.bedrooms if listing.bedrooms
+      request[:'residence[bathrooms]'] = listing.bathrooms if listing.bathrooms
+      request[:'residence[residence_class][name]'] = listing.residence_class if listing.residence_class
+      new.emission(request).perform.parse['emission']
     end
   end
 end
