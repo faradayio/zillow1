@@ -8,3 +8,7 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
+
+task :statistical_area_fetch_and_store_listings => :environment do
+  StatisticalArea.fetch_and_store_listings!
+end
