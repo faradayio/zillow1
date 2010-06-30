@@ -9,6 +9,8 @@ require 'rake/rdoctask'
 
 require 'tasks/rails'
 
-task :statistical_area_fetch_and_store_listings => :environment do
+# http://docs.heroku.com/cron
+# sabshere 6/30/10 i'm gonna sign us up for daily cron
+task :cron => :environment do
   StatisticalArea.fetch_and_store_listings!
 end
