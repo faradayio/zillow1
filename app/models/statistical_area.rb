@@ -41,7 +41,14 @@ class StatisticalArea < ActiveRecord::Base
   memoize :average_emission
   
   def emissions
-    self.class.days.map { |d| average_emission d }
+    results = self.class.days.map { |d| average_emission d }
+    if results.any?(&:nil?)
+      nonnil_results = results.compact
+      overall_average = nonnil_results.sum / nonnil_results.count
+      results.map { |r| r.nil? ? overall_average : r }
+    else
+      results
+    end
   end
   
   def clear_cache
