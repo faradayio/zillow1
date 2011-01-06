@@ -44,7 +44,7 @@ class StatisticalArea < ActiveRecord::Base
     results = self.class.days.map { |d| average_emission d }
     if results.any?(&:nil?)
       nonnil_results = results.compact
-      overall_average = nonnil_results.sum / nonnil_results.count
+      overall_average = nonnil_results.sum / nonnil_results.length
       results.map { |r| r.nil? ? overall_average : r }
     else
       results
