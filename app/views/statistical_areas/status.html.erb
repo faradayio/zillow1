@@ -5,3 +5,5 @@ Statistical areas: <%= StatisticalArea.count %>
 
 Days (<%= StatisticalArea.days.length %>): <%= StatisticalArea.days.join("\n ") %>
 </pre>
+
+<table><%= Rails.cache.stats.values[0].map { |k, v| "<tr><th>#{k}</td><th>#{v}</td></tr>"}.join("\n") %></table>

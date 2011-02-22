@@ -1,3 +1,5 @@
+<% cache "statistical_areas/definition/#{statistical_area.hash}", :expires_in => 1.hour do %>
+  <!-- cached at <%= Time.now %> -->
       <dt class="time_series">Emission time series</dt>
       <dd class="time_series"><span id="<%= statistical_area.identifier + '_sparkline' %>" class="sparkline"></span><%= spark_line_tag statistical_area.identifier + '_sparkline', statistical_area.emissions.compact.map { |e| e - statistical_area.emissions.compact.min }, :color => '#ccc' %></dd>      <dt class="rank">Rank</dt>
       <dd class="rank"><%= rank %></dd>
@@ -5,3 +7,4 @@
       <dd class="name"><%= link_to_zillow_statistical_area statistical_area %></dd>
       <dt class="emission">Emission</dt>
       <dd class="emission"><%=number_with_delimiter statistical_area.average_emission(StatisticalArea.days.last).round.to_i %> kg CO<sub>2</sub>/yr</dd>
+<% end %>

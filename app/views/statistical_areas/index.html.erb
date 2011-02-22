@@ -41,19 +41,22 @@
 </div>
 
 <% content_for :bottom do %>
-<%= line_graph_tag 'graph', StatisticalArea.emissions, :stroke_width => 3,
-                                                       :datalabels => StatisticalArea.all.inject({}) { |memo, s| memo[s.identifier] = s.name; memo },
-                                                       :draw_axis => false, :background_color => '#eee',
-                                                       :draw_hovers => true,
-                                                       :hover_color => 'red',
-                                                       :grid => false,
-                                                       :show_horizontal_labels => false,
-                                                       :show_vertical_labels => false,
-                                                       :left_padding => 0,
-                                                       :right_padding => 0,
-                                                       :background_color => '#333',
-                                                       :plot_padding => 0 %>
-<script type="text/javascript">
-$$('ol.statistical_areas li').slice(10).invoke('hide');
-</script>
+  <% cache 'statistical_areas/index/line_graph', :expires_in => 1.hour do %>
+    <!-- cached at <%= Time.now %> -->
+    <%= line_graph_tag 'graph', StatisticalArea.emissions, :stroke_width => 3,
+                                                           :datalabels => StatisticalArea.all.inject({}) { |memo, s| memo[s.identifier] = s.name; memo },
+                                                           :draw_axis => false, :background_color => '#eee',
+                                                           :draw_hovers => true,
+                                                           :hover_color => 'red',
+                                                           :grid => false,
+                                                           :show_horizontal_labels => false,
+                                                           :show_vertical_labels => false,
+                                                           :left_padding => 0,
+                                                           :right_padding => 0,
+                                                           :background_color => '#333',
+                                                           :plot_padding => 0 %>
+  <% end %>
+  <script type="text/javascript">
+  $$('ol.statistical_areas li').slice(10).invoke('hide');
+  </script>
 <% end %>
