@@ -62,7 +62,7 @@ class StatisticalArea < ActiveRecord::Base
   
   class << self
     def days
-      connection.select_values('SELECT DISTINCT DATE(appearances.appeared_at) AS d FROM appearances WHERE appearances.appeared_at IS NOT NULL ORDER BY d').map { |raw| Date.parse raw }
+      connection.select_values('SELECT DISTINCT DATE(appearances.appeared_at) AS d FROM appearances WHERE appearances.appeared_at IS NOT NULL ORDER BY d LIMIT 15').map { |raw| Date.parse raw }
     end
     cache_method :days
   
@@ -73,7 +73,9 @@ class StatisticalArea < ActiveRecord::Base
     def fetch_and_store_listings!
       all.each do |statistical_area|
         statistical_area.fetch_and_store_listings!
-        sleep 10
+        # prime the cache
+        statistical_area.emissions
+        sleep 5
       end
     ensure
       clear_method_cache :days
