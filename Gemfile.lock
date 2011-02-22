@@ -13,7 +13,7 @@ GEM
     activesupport (2.3.11)
     blockenspiel (0.4.1)
     builder (3.0.0)
-    cache (0.0.2)
+    cache (0.0.3)
     cache_method (0.1.1)
       cache
     conversions (1.4.5)
