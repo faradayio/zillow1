@@ -1,5 +1,5 @@
       <dt class="time_series">Emission time series</dt>
-      <dd class="time_series"><span id="<%= statistical_area.identifier + '_sparkline' %>" class="sparkline"></span><%= sparkline_tag statistical_area.identifier + '_sparkline', statistical_area.emissions.compact.map { |e| e - statistical_area.emissions.compact.min }, :color => '#ccc' %></dd>      <dt class="rank">Rank</dt>
+      <dd class="time_series"><span id="<%= statistical_area.identifier + '_sparkline' %>" class="sparkline"></span><%= spark_line_tag statistical_area.identifier + '_sparkline', statistical_area.emissions.compact.map { |e| e - statistical_area.emissions.compact.min }, :color => '#ccc' %></dd>      <dt class="rank">Rank</dt>
       <dd class="rank"><%= rank %></dd>
       <dt class="name">Name</dt>
       <dd class="name"><%= link_to_zillow_statistical_area statistical_area %></dd>

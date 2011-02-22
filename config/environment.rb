@@ -13,19 +13,8 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.autoload_paths += %W( #{RAILS_ROOT}/extras )
-  # config.gem 'errata', :version => '0.2.1'
-  # config.gem 'remote_table', :version => '0.2.20'
 
-  config.gem 'data_miner', :version => '0.4.27'
-  config.gem 'weary', :version => '0.7.2'
-  config.gem 'grafico', :version => '0.2.3'
-  config.gem 'cacheable', :version => '0.1.12'
-  config.gem 'conversions', :version => '1.4.5'
-
-  # http://docs.heroku.com/memcache
-  config.gem 'memcached', :version => '0.19.2' # 19.3 breaks a lot
-  require 'memcached'
-  config.cache_store = :mem_cache_store, Memcached::Rails.new
+  # sabshere 2/21/11 gems are in Gemfile
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -45,4 +34,8 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  
+  require 'active_support'
+  require 'active_support/cache/dalli_store23'
+  config.cache_store = :dalli_store
 end

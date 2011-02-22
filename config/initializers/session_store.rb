@@ -6,7 +6,7 @@
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
   :key         => '_zillow1_session',
-  :secret      => ENV['ACTION_CONTROLLER_BASE_SESSION_SECRET'] || 'bazbar'
+  :secret      => ENV['ACTION_CONTROLLER_BASE_SESSION_SECRET'] || ('foobar'*5)
 }
 
 # Use the database for sessions instead of the cookie-based default,
