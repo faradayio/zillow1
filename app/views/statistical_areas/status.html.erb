@@ -1,10 +1,7 @@
 <pre>
+Appearances: <%= Appearance.count %>
 Listings: <%= Listing.count %>
 Statistical areas: <%= StatisticalArea.count %>
 
-Cache:
-<%= Rails.cache.stats %>
-
-Days:
-<%= StatisticalArea.days %>
+Days (<%= StatisticalArea.days.length %>): <%= StatisticalArea.days.join("\n ") %>
 </pre>
