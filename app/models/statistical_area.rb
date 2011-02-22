@@ -45,10 +45,7 @@ class StatisticalArea < ActiveRecord::Base
     (e = appearances.on(day).map { |appearance| appearance.listing.emission}.compact).any? ? (e.sum / e.length) : nil
   end
   cache_method :average_emission, 24.hours
-  
-  # extend ActiveSupport::Memoizable
-  # memoize :average_emission
-  
+    
   def emissions
     results = self.class.days.map { |d| average_emission d }
     if results.any?(&:nil?)
