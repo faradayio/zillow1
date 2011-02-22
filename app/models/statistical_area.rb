@@ -44,7 +44,7 @@ class StatisticalArea < ActiveRecord::Base
   def average_emission(day)
     (e = appearances.on(day).map { |appearance| appearance.listing.emission}.compact).any? ? (e.sum / e.length) : nil
   end
-  cache_method :average_emission
+  cache_method :average_emission, 24.hours
   
   # extend ActiveSupport::Memoizable
   # memoize :average_emission
@@ -62,7 +62,7 @@ class StatisticalArea < ActiveRecord::Base
   
   class << self
     def days
-      connection.select_values('SELECT DISTINCT DATE(appearances.appeared_at) AS d FROM appearances WHERE appearances.appeared_at IS NOT NULL ORDER BY d LIMIT 10').map { |raw| Date.parse raw }
+      connection.select_values('SELECT DISTINCT DATE(appearances.appeared_at) AS d FROM appearances WHERE appearances.appeared_at IS NOT NULL ORDER BY d').map { |raw| Date.parse raw }
     end
     cache_method :days
   
