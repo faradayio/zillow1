@@ -46,6 +46,9 @@ class StatisticalArea < ActiveRecord::Base
   end
   cache_method :average_emission
   
+  # extend ActiveSupport::Memoizable
+  # memoize :average_emission
+  
   def emissions
     results = self.class.days.map { |d| average_emission d }
     if results.any?(&:nil?)
