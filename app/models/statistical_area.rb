@@ -6,7 +6,7 @@ class StatisticalArea < ActiveRecord::Base
   
   data_miner do
     import  'Zillow statistical areas',
-            :url => 'http://www.zillow.com/static/xls/Zestimate_Accuracy_December_31_2009.xls',
+            :url => 'http://www.zillow.com/static/xls/Zestimate_Accuracy_December_31_2010.xls',
             :sheet => 2,
             :errata => { :url => 'http://github.com/brighterplanet/zillow1/raw/master/public/zillow_statistical_areas_errata.csv' } do
       key 'name', :field_name => 'CMSA'
