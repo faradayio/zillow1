@@ -34,25 +34,29 @@ class StatisticalArea < ActiveRecord::Base
       zpid = Listing.zpid_from_url(result['detailPageLink'])
 
       listing = listings.find_or_initialize_by_zpid(zpid)
-      listing.update_attributes!(
-        :zipcode => result['address']['zipcode'],
-        :bathrooms => result['bathrooms'].to_f.nonzero?,
-        :bedrooms => result['bedrooms'].to_i.nonzero?,
-        :zillow_home_type => (result['homeType'] == 'unknown' ? nil : result['homeType']),
-        :floorspace => result['finishedSqFt'].to_i.nonzero?
-      ) 
-      time = Time.now
-      appearance = listing.appearances.find_or_initialize_by_composite_identifier("#{listing.zpid}-#{time.to_i}")
-      appearance.update_attributes! :appeared_at => time
+      listing.zipcode = result['address']['zipcode']
+      listing.bathrooms = result['bathrooms'].to_f.nonzero?
+      listing.bedrooms = result['bedrooms'].to_i.nonzero?
+      listing.floorspace = result['finishedSqFt'].to_i.nonzero?
 
-      listing.calculate_emission!
+      home_type = (result['homeType'] == 'unknown' ? nil : result['homeType'])
+      listing.zillow_home_type = home_type
+
+      changed = listing.changed?
+
+      time = Time.now
+      listing.appearances.create :composite_identifier => "#{listing.zpid}-#{time.to_i}", :appeard_at => time
+
+      listing.calculate_emission! if changed
     end
   ensure
     clear_method_cache :average_emission
   end
   
   def average_emission(day)
-    (e = appearances.on(day).map { |appearance| appearance.listing.emission}.compact).any? ? (e.sum / e.length) : nil
+    e = appearances.on(day)
+    e = e.map { |appearance| appearance.listing.emission}.compact
+    e.any? ? (e.sum / e.length) : nil
   end
   cache_method :average_emission, 24.hours
     
@@ -60,7 +64,7 @@ class StatisticalArea < ActiveRecord::Base
     results = self.class.days.map { |d| average_emission d }
     if results.any?(&:nil?)
       nonnil_results = results.compact
-      overall_average = nonnil_results.sum / nonnil_results.length
+      overall_average = nonnil_results.any? ? nonnil_results.sum / nonnil_results.length : nil
       results.map { |r| r.nil? ? overall_average : r }
     else
       results

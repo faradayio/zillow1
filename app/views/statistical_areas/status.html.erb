@@ -3,7 +3,25 @@ Appearances: <%= Appearance.count %>
 Listings: <%= Listing.count %>
 Statistical areas: <%= StatisticalArea.count %>
 
-Days (<%= StatisticalArea.days.length %>): <%= StatisticalArea.days.join("\n ") %>
+<% days = StatisticalArea.days %>
+Days (<%= days.length %>): <%= days.join("\n ") %>
 </pre>
+<table>
+  <tr>
+    <th></th>
+    <% days.each do |d| %>
+      <th><%= d %></th>
+    <% end %>
+  </tr>
+<% StatisticalArea.all.each do |area| %>
+  <tr>
+    <th><%= area.name %></th>
+    <% days.each do |d| %>
+      <th><%= area.appearances.on(d).count %></th>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
 
 <table><%= Rails.cache.stats.values[0].map { |k, v| "<tr><th>#{k}</td><th>#{v}</td></tr>"}.join("\n") %></table>
