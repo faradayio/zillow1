@@ -44,6 +44,8 @@ class StatisticalArea < ActiveRecord::Base
 
       changed = listing.changed?
 
+      listing.save!
+
       time = Time.now
       listing.appearances.create :composite_identifier => "#{listing.zpid}-#{time.to_i}", :appeared_at => time
 
