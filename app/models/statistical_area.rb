@@ -30,12 +30,22 @@ class StatisticalArea < ActiveRecord::Base
   def fetch_and_store_listings!
     ZillowSearch.new(url_encoded_name).results.each do |result|
       next if %w(lot multiFamily).include? result['homeType'] # skip irrelevant home types
-      listings.find_or_create_by_zpid(Listing.zpid_from_url(result['detailPageLink'])).tap { |listing| listing.update_attributes(
+
+      zpid = Listing.zpid_from_url(result['detailPageLink'])
+
+      listing = listings.find_or_initialize_by_zpid(zpid)
+      listing.update_attributes!(
         :zipcode => result['address']['zipcode'],
         :bathrooms => result['bathrooms'].to_f.nonzero?,
         :bedrooms => result['bedrooms'].to_i.nonzero?,
         :zillow_home_type => (result['homeType'] == 'unknown' ? nil : result['homeType']),
-        :floorspace => result['finishedSqFt'].to_i.nonzero? ) }.tap { |listing| time = Time.now; listing.appearances.find_or_create_by_composite_identifier("#{listing.zpid}-#{time.to_i}").update_attributes :appeared_at => time }.calculate_emission!
+        :floorspace => result['finishedSqFt'].to_i.nonzero?
+      ) 
+      time = Time.now
+      appearance = listing.appearances.find_or_initialize_by_composite_identifier("#{listing.zpid}-#{time.to_i}")
+      appearance.update_attributes! :appeared_at => time
+
+      listing.calculate_emission!
     end
   ensure
     clear_method_cache :average_emission
@@ -79,6 +89,7 @@ class StatisticalArea < ActiveRecord::Base
     end
   
     def leaderboard
+      raise "There are no days" if days.empty?
       all.select { |s| s.average_emission(days.last).present? }.sort_by { |s| s.average_emission days.last }
     end
   end

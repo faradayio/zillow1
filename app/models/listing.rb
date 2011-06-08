@@ -3,9 +3,11 @@ class Listing < ActiveRecord::Base
   
   belongs_to :statistical_area
   has_many :appearances
+
+  validates_presence_of :zpid
   
   def calculate_emission!
-    update_attributes :emission => EmissionEstimate.of(self)
+    update_attributes! :emission => EmissionEstimate.of(self)
   end
   
   def residence_class

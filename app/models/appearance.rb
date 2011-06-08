@@ -5,4 +5,6 @@ class Appearance < ActiveRecord::Base
   
   named_scope :today, :conditions => { :appeared_at => Date.today.to_time..Date.today.tomorrow.to_time }
   named_scope :on, lambda { |date| { :conditions => { :appeared_at => date.to_time..date.tomorrow.to_time } } }
+
+  validates_presence_of :appeared_at
 end
