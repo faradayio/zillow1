@@ -10,13 +10,11 @@ group :production do
   gem 'pg'
 end
 
-# eager versions
-gem 'data_miner', '1.1.4'
-gem 'weary', '0.7.2'
-gem 'grafico', '0.2.5'
-gem 'conversions', '1.4.5'
-
-# lazy versions
+gem 'data_miner'
+gem 'weary'
+gem 'grafico'
+gem 'conversions'
 gem 'dalli'
 gem 'cache_method'
 gem 'hoptoad_notifier'
+gem 'rake', '0.8.7'
