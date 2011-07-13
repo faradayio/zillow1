@@ -9,13 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100511171646) do
+ActiveRecord::Schema.define(:version => 20110713183411) do
 
   create_table "appearances", :id => false, :force => true do |t|
     t.integer  "listing_id"
     t.datetime "appeared_at"
     t.string   "composite_identifier"
   end
+
+  add_index "appearances", ["listing_id"], :name => "index_appearances_on_listing_id"
 
   create_table "listings", :id => false, :force => true do |t|
     t.integer  "zpid"
@@ -29,6 +31,9 @@ ActiveRecord::Schema.define(:version => 20100511171646) do
     t.datetime "updated_at"
     t.float    "emission"
   end
+
+  add_index "listings", ["statistical_area_id"], :name => "index_listings_on_statistical_area_id"
+  add_index "listings", ["zpid"], :name => "index_listings_on_zpid"
 
   create_table "statistical_areas", :id => false, :force => true do |t|
     t.string   "name"
