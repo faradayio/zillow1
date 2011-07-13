@@ -30,6 +30,9 @@ class StatisticalArea < ActiveRecord::Base
   def fetch_and_store_listings!
     ZillowSearch.new(url_encoded_name).results.each do |result|
       next if %w(lot multiFamily).include? result['homeType'] # skip irrelevant home types
+      next if result['floorspace'].to_i > 10000 # skip excessively large properties
+      next if result['bathrooms'].to_i > 20 # skip excessively large properties
+      next if result['bedrooms'].to_i > 20 # skip excessively large properties
 
       zpid = Listing.zpid_from_url(result['detailPageLink'])
 
