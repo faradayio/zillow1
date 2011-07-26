@@ -63,7 +63,7 @@ class StatisticalArea < ActiveRecord::Base
     e = e.map { |appearance| appearance.listing.emission}.compact
     e.any? ? (e.sum / e.length) : nil
   end
-  cache_method :average_emission, 24.hours
+  cache_method :average_emission, 50.hours
     
   def emissions
     results = self.class.days.map { |d| average_emission d }
@@ -80,7 +80,7 @@ class StatisticalArea < ActiveRecord::Base
     def days
       connection.select_values('SELECT DISTINCT DATE(appearances.appeared_at) AS d FROM appearances WHERE appearances.appeared_at IS NOT NULL ORDER BY d DESC LIMIT 15').reverse.map { |raw| Date.parse raw }
     end
-    cache_method :days
+    cache_method :days, 24.hours
   
     def emissions
       all.inject({}) { |memo, s| memo[s.identifier] = s.emissions; memo }
