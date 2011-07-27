@@ -50,7 +50,9 @@ class StatisticalArea < ActiveRecord::Base
       listing.save!
 
       time = Time.now
-      listing.appearances.create :composite_identifier => "#{listing.zpid}-#{time.to_i}", :appeared_at => time
+      a = listing.appearances.build :appeared_at => time
+      a.composite_identifier = "#{listing.zpid}-#{time.to_i}" # can't be mass-assigned because it's the primary key
+      a.save!
 
       listing.calculate_emission! if changed
     end
