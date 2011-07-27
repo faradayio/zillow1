@@ -59,13 +59,27 @@ class StatisticalArea < ActiveRecord::Base
   ensure
     clear_method_cache :average_emission
   end
-    
+  
   def average_emission(day)
+    sql = %{
+      SELECT
+        AVG(listings.emission) as avg_emission
+      FROM listings
+      INNER JOIN appearances ON listings.zpid = appearances.listing_id
+      WHERE
+        listings.statistical_area_id = '#{name}' AND
+        appearances.appeared_at BETWEEN '#{day.to_time.to_formatted_s(:db)}' AND '#{day.tomorrow.to_time.to_formatted_s(:db)}' AND
+        listings.emission IS NOT NULL
+    }
+    connection.select_value(sql)
+  end
+  cache_method :average_emission, 50.hours
+  
+  def average_emission_old(day)
     e = appearances.on(day)
     e = e.map { |appearance| appearance.listing.emission }.compact
     e.any? ? (e.sum / e.length) : nil
   end
-  cache_method :average_emission, 50.hours
     
   def emissions
     results = self.class.days.map { |d| average_emission d }
