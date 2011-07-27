@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20110713183411) do
     t.string   "composite_identifier"
   end
 
+  add_index "appearances", ["appeared_at"], :name => "index_appearances_on_appeared_at"
   add_index "appearances", ["listing_id"], :name => "index_appearances_on_listing_id"
 
   create_table "listings", :id => false, :force => true do |t|
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20110713183411) do
   end
 
   add_index "listings", ["statistical_area_id"], :name => "index_listings_on_statistical_area_id"
-  add_index "listings", ["zpid"], :name => "index_listings_on_zpid"
+  add_index "listings", ["zpid"], :name => "index_listings_on_zpid", :unique => true
 
   create_table "statistical_areas", :id => false, :force => true do |t|
     t.string   "name"
