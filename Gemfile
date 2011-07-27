@@ -3,7 +3,7 @@ source :rubygems
 gem 'rails', '2.3.11'
 
 group :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'mysql2', '~>0.2.0'
 end
 
 group :production do
