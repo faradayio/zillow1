@@ -57,10 +57,10 @@ class StatisticalArea < ActiveRecord::Base
   ensure
     clear_method_cache :average_emission
   end
-  
+    
   def average_emission(day)
     e = appearances.on(day)
-    e = e.map { |appearance| appearance.listing.emission}.compact
+    e = e.map { |appearance| appearance.listing.emission }.compact
     e.any? ? (e.sum / e.length) : nil
   end
   cache_method :average_emission, 50.hours
