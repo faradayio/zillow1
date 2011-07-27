@@ -94,7 +94,7 @@ class StatisticalArea < ActiveRecord::Base
   
   class << self
     def days
-      connection.select_values('SELECT DISTINCT DATE(appearances.appeared_at) AS d FROM appearances WHERE appearances.appeared_at IS NOT NULL ORDER BY d DESC LIMIT 15').reverse.map { |raw| Date.parse raw }
+      connection.select_values('SELECT DISTINCT DATE(appearances.appeared_at) AS d FROM appearances WHERE appearances.appeared_at IS NOT NULL ORDER BY d DESC LIMIT 15').reverse
     end
     cache_method :days, 24.hours
   

@@ -3,8 +3,15 @@ class Appearance < ActiveRecord::Base
   
   belongs_to :listing
   
-  named_scope :today, :conditions => { :appeared_at => Date.today.to_time..Date.today.tomorrow.to_time }
-  named_scope :on, lambda { |date| { :conditions => { :appeared_at => date.to_time..date.tomorrow.to_time } } }
+  class << self
+    def today
+      scoped :conditions => { :appeared_at => Date.today.to_time..Date.today.tomorrow.to_time }
+    end
+    
+    def on(day)
+      scoped :conditions => { :appeared_at => date.to_time..date.tomorrow.to_time }
+    end
+  end
 
   validates_presence_of :appeared_at
 end

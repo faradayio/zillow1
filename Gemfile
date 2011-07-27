@@ -1,8 +1,9 @@
 source :rubygems
 
-gem 'rails', '2.3.11'
+gem 'rails', '3.0.9'
 
 group :development do
+  gem 'thin'
   gem 'mysql2', '~>0.2.0'
 end
 

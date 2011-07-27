@@ -1,4 +1,4 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :statistical_areas, :collection => { :status => :get }
-  map.root :controller => :statistical_areas, :action => :index
+Zillow1::Application.routes.draw do
+  resources :statistical_areas, :collection => { :status => :get }
+  root :to => 'statistical_areas#index'
 end
