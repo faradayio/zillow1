@@ -195,5 +195,6 @@ p#more a {
 }
 
 .brighter_planet_cm1_badge {
-  margin-left: 10px;
+  float: right;
+  margin-top: 10px;
 }

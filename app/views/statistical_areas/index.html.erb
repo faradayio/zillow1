@@ -36,10 +36,6 @@
 <p id="more"><%= link_to_function 'Show all cities', '$$("ol.statistical_areas li").invoke("show"); this.up().hide()' %><p>
 </div>
 
-<div id="footer">
-  <script type="text/javascript" src="http://carbon.brighterplanet.com/badge.js"></script> 
-</div>
-
 <% content_for :bottom do %>
   <% cache 'statistical_areas/index/line_graph', :expires_in => 1.hour do %>
     <!-- cached at <%= Time.now %> -->
