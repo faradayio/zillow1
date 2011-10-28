@@ -6,8 +6,8 @@ require 'rake'
 
 Zillow1::Application.load_tasks
 
-namespace :memcachce do
-  task :flush do
+namespace :memcache do
+  task :flush => :environment do
     Rails.cache.clear
   end
 end
