@@ -5,3 +5,9 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 Zillow1::Application.load_tasks
+
+namespace :memcachce do
+  task :flush do
+    Rails.cache.clear
+  end
+end
