@@ -71,7 +71,8 @@ class StatisticalArea < ActiveRecord::Base
         appearances.appeared_at BETWEEN '#{day.to_time.to_formatted_s(:db)}' AND '#{day.to_time.tomorrow.to_formatted_s(:db)}' AND
         listings.emission IS NOT NULL
     }
-    connection.select_value(sql)
+    result = connection.select_value(sql)
+    result =~ /\d/ ? result.to_f : nil
   end
   cache_method :average_emission, 50.hours
   
