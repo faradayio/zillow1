@@ -1,15 +1,34 @@
+require 'open-uri'
+require 'httparty'
+
 class ZillowSearch
-  require 'open-uri'
-  require 'json'
-  
-  attr_reader :region_name
+  include HTTParty
+  base_uri 'www.zillow.com/webservice'
+
+  attr_accessor :region_name, :postings
+
+  ZWS_ID = 'X1-ZWz1brt72uscnf_9k5bc'
   
   def initialize(r)
     @region_name = r
   end
+
+  def makeMeMove; posting_group('makeMeMove'); end
+  def forSaleByOwner; posting_group('forSaleByOwner'); end
+  def forSaleByAgent; posting_group('forSaleByAgent'); end
+  def reportForSale; posting_group('reportForSale'); end
+
+  def posting_group(name)
+    (postings[name] && postings[name]['result']) ? postings[name]['result'] : []
+  end
   
   def perform
-    JSON.parse(open("http://www.zillow.com/webservice/FMRWidget.htm?zws-id=X1-ZWz1c7urejqkgb_7x5fi&region=#{region_name}&status=forSale&status=makeMeMove&ranking=daysOnZillow&widget=fmrwidget_nfs&output=json").read)['response']['results']  
+    data = self.class.get('/GetRegionPostings.htm', :query => {
+      'zws-id' => ZWS_ID,
+      'citystatezip' => region_name
+    })
+    self.postings = data['regionPostings']['response']
+    makeMeMove + forSaleByOwner + forSaleByAgent + reportForSale
   end
   
   def results

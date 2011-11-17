@@ -1,0 +1,333 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://www.zillow.com:80/webservice/GetRegionPostings.htm?zws-id=X1-ZWz1brt72uscnf_9k5bc&citystatezip=Minneapolis-St.%20Paul%2C%20MN
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 17 Nov 2011 02:02:15 GMT
+      server:
+      - Apache-Coyote/1.1
+      x-powered-by:
+      - ! 'Servlet 2.4; JBoss-4.0.3SP1 (build: CVSTag=JBoss_4_0_3_SP1 date=200510231054)/Tomcat-5.5'
+      x-internal-host:
+      - '117'
+      expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      cache-control:
+      - no-cache
+      content-type:
+      - text/xml;charset=UTF-8
+      set-cookie:
+      - JSESSIONID=0DE950A3D5E46EF34678B4AC72AC65CB; Path=/
+      - JSESSIONID=0DE950A3D5E46EF34678B4AC72AC65CB; Path=/
+      - abtest=1|HDPShopping%3D31%3AHDPFilmStrip%3D0%3ASearchSort%3D16%3ARealEstateMarketingPageVersion%3D6%3AComboLoader%3D27%3AUnused6%3D66%3ABALContentTest%3D50%3AMobileBALTest%3D14%3AHDPChartLoadPhase%3D25%3ARealEstateMarketingPageNotify%3D36;
+        Domain=.zillow.com; Expires=Tue, 16-Nov-2021 14:02:16 GMT; Path=/
+      - zguid=8|%5B%2207d5d61b-50dd-4274-bacb-fc7cc8fd2caf%22%2C%2200%22%2C%22%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%5Cu0000%22%2C%22false%40false%40false%22%2C%220%22%2C%220%22%2C%220%22%5D;
+        Domain=.zillow.com; Expires=Tue, 16-Nov-2021 14:02:16 GMT; Path=/
+      - BIGipServerapache_pool_0=3456895498.0.0000; path=/
+      via:
+      - 1.1 www.zillow.com
+      vary:
+      - User-Agent
+      transfer-encoding:
+      - chunked
+    body: ! '<?xml version="1.0" encoding="utf-8"?><RegionPostings:regionPostings
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.zillow.com/static/xsd/RegionPostings.xsd
+      http://www.zillowstatic.com/vstatic/46ea1dcc78a8261c2b710990e3512258/static/xsd/RegionPostings.xsd"
+      xmlns:RegionPostings="http://www.zillow.com/static/xsd/RegionPostings.xsd"><request></request><message><text>Request
+      successfully processed</text><code>0</code></message><response><regionId>20313</regionId><links><forSale>http://www.zillow.com/homes/for_sale/Saint-Paul-MN/</forSale><forSaleByOwner>http://www.zillow.com/homes/fsbo/Saint-Paul-MN/</forSaleByOwner><foreclosures>http://www.zillow.com/homes/for_sale/Saint-Paul-MN/fore_lt/0_mmm/</foreclosures></links><makeMeMove><count>92</count><result><lastRefreshedDate>2011-11-16
+      18:02:16.152</lastRefreshedDate><property><zpid>2044967</zpid><links><homedetails>http://www.zillow.com/homedetails/1709-Selby-Ave-Saint-Paul-MN-55104/2044967_zpid/</homedetails></links><address><street>1709
+      Selby Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.946814</latitude><longitude>-93.172508</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4356</lotSizeSqFt><finishedSqFt>1408</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>5</bedrooms></property><images><count>0</count></images><price>210000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.152</lastRefreshedDate><property><zpid>2104062</zpid><links><homedetails>http://www.zillow.com/homedetails/1754-Field-Ave-Saint-Paul-MN-55116/2104062_zpid/</homedetails></links><address><street>1754
+      Field Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.902313</latitude><longitude>-93.174446</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5662</lotSizeSqFt><finishedSqFt>1152</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>215000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.152</lastRefreshedDate><property><zpid>2136540</zpid><links><homedetails>http://www.zillow.com/homedetails/757-Rose-Ave-E-Saint-Paul-MN-55106/2136540_zpid/</homedetails></links><address><street>757
+      Rose Ave E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.976839</latitude><longitude>-93.068563</longitude></address><useCode>Multi
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1914</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>155000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>2130844</zpid><links><homedetails>http://www.zillow.com/homedetails/895-Clarence-St-Saint-Paul-MN-55106/2130844_zpid/</homedetails></links><address><street>895
+      Clarence St</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.968342</latitude><longitude>-93.042989</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>1040</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>2</bedrooms></property><images><count>12</count></images><price>124900</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>2148057</zpid><links><homedetails>http://www.zillow.com/homedetails/1250-3rd-St-E-Saint-Paul-MN-55106/2148057_zpid/</homedetails></links><address><street>1250
+      3rd St E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.956636</latitude><longitude>-93.047554</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>3920</lotSizeSqFt><finishedSqFt>1281</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>2</bedrooms></property><images><count>1</count></images><price>112000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>64918333</zpid><links><homedetails>http://www.zillow.com/homedetails/1583-Laurel-Ave-APT-1-Saint-Paul-MN-55104/64918333_zpid/</homedetails></links><address><street>1583
+      Laurel Ave APT 1</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.945234</latitude><longitude>-93.16729</longitude></address><useCode>Condo</useCode><lotSizeSqFt>871</lotSizeSqFt><finishedSqFt>839</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>180000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>2157942</zpid><links><homedetails>http://www.zillow.com/homedetails/635-Charles-Ave-Saint-Paul-MN-55104/2157942_zpid/</homedetails></links><address><street>635
+      Charles Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.957789</latitude><longitude>-93.127029</longitude></address><useCode>Multi
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1700</finishedSqFt><bathrooms>2.5</bathrooms><bedrooms>5</bedrooms></property><images><count>4</count></images><price>150000</price></result><result><lastRefreshedDate>2011-09-30
+      07:17:00.0</lastRefreshedDate><property><zpid>2124116999</zpid><links><homedetails>http://www.zillow.com/homedetails/42-St-Albans-St-S-6-St-Paul-MN-55105/2124116999_zpid/</homedetails></links><address><street>42
+      St Albans St S #6</street><zipcode>55105</zipcode><city>St Paul</city><state>MN</state><latitude>44.934777</latitude><longitude>-93.162284</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt></lotSizeSqFt><finishedSqFt></finishedSqFt><bathrooms></bathrooms><bedrooms></bedrooms></property><images><count>0</count></images><price>189000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>2102505</zpid><links><homedetails>http://www.zillow.com/homedetails/2341-Commonwealth-Ave-Saint-Paul-MN-55108/2102505_zpid/</homedetails></links><address><street>2341
+      Commonwealth Ave</street><zipcode>55108</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.978723</latitude><longitude>-93.19838</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6969</lotSizeSqFt><finishedSqFt>1800</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>1</count></images><price>335000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>89058555</zpid><links><homedetails>http://www.zillow.com/homedetails/1345-Magnolia-Ave-E-1345-Saint-Paul-MN-55106/89058555_zpid/</homedetails></links><address><street>1345
+      Magnolia Ave E # 1345</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.97412</latitude><longitude>-93.043523</longitude></address><useCode>Condo</useCode><lotSizeSqFt>1306</lotSizeSqFt><finishedSqFt>1334</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>165000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>2154148</zpid><links><homedetails>http://www.zillow.com/homedetails/1153-Edmund-Ave-Saint-Paul-MN-55104/2154148_zpid/</homedetails></links><address><street>1153
+      Edmund Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.958702</latitude><longitude>-93.148814</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1325</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>166000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>2063423</zpid><links><homedetails>http://www.zillow.com/homedetails/1712-Scheffer-Ave-Saint-Paul-MN-55116/2063423_zpid/</homedetails></links><address><street>1712
+      Scheffer Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.921313</latitude><longitude>-93.17269</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>2300</finishedSqFt><bathrooms>2.5</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>525000</price></result><result><lastRefreshedDate>2011-08-27
+      02:44:00.0</lastRefreshedDate><property><zpid>64463248</zpid><links><homedetails>http://www.zillow.com/homedetails/928-Iroquois-Ave-Saint-Paul-MN-55119/64463248_zpid/</homedetails></links><address><street>928
+      Iroquois Ave</street><zipcode>55119</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.96955</latitude><longitude>-93.016024</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1400</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>15</count></images><price>139000</price></result><result><lastRefreshedDate>2011-08-23
+      10:02:00.0</lastRefreshedDate><property><zpid>2147776</zpid><links><homedetails>http://www.zillow.com/homedetails/1072-Minnehaha-Ave-E-Saint-Paul-MN-55106/2147776_zpid/</homedetails></links><address><street>1072
+      Minnehaha Ave E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.96279</latitude><longitude>-93.055223</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1078</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>4</count></images><price>120000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2061510</zpid><links><homedetails>http://www.zillow.com/homedetails/1622-Wellesley-Ave-Saint-Paul-MN-55105/2061510_zpid/</homedetails></links><address><street>1622
+      Wellesley Ave</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.931279</latitude><longitude>-93.168841</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6534</lotSizeSqFt><finishedSqFt>2512</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>325000</price></result><result><lastRefreshedDate>2011-08-16
+      10:22:00.0</lastRefreshedDate><property><zpid>2102733</zpid><links><homedetails>http://www.zillow.com/homedetails/2218-Doswell-Ave-Saint-Paul-MN-55108/2102733_zpid/</homedetails></links><address><street>2218
+      Doswell Ave</street><zipcode>55108</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.982072</latitude><longitude>-93.194131</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>10454</lotSizeSqFt><finishedSqFt>2648</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>6</bedrooms></property><images><count>0</count></images><price>450000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>63131043</zpid><links><homedetails>http://www.zillow.com/homedetails/78-10th-St-E-R2910-Saint-Paul-MN-55101/63131043_zpid/</homedetails></links><address><street>78
+      10th St E # R2910</street><zipcode>55101</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.950494</latitude><longitude>-93.096106</longitude></address><useCode>Condo</useCode><lotSizeSqFt>871</lotSizeSqFt><finishedSqFt>989</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>200000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2041308</zpid><links><homedetails>http://www.zillow.com/homedetails/1535-Goodrich-Ave-Saint-Paul-MN-55105/2041308_zpid/</homedetails></links><address><street>1535
+      Goodrich Ave</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.938233</latitude><longitude>-93.165112</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>7405</lotSizeSqFt><finishedSqFt>2289</finishedSqFt><bathrooms>2.5</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>550000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2063629</zpid><links><homedetails>http://www.zillow.com/homedetails/684-Roy-St-S-Saint-Paul-MN-55116/2063629_zpid/</homedetails></links><address><street>684
+      Roy St S</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.92073</latitude><longitude>-93.168002</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>7405</lotSizeSqFt><finishedSqFt>1386</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>350000</price></result><result><lastRefreshedDate>2011-10-24
+      21:45:00.0</lastRefreshedDate><property><zpid>2109675</zpid><links><homedetails>http://www.zillow.com/homedetails/1539-Chelsea-St-Saint-Paul-MN-55108/2109675_zpid/</homedetails></links><address><street>1539
+      Chelsea St</street><zipcode>55108</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.987568</latitude><longitude>-93.154387</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1950</finishedSqFt><bathrooms>1.75</bathrooms><bedrooms>3</bedrooms></property><images><count>6</count></images><price>224900</price></result><result><lastRefreshedDate>2011-06-18
+      00:00:00.0</lastRefreshedDate><property><zpid>2154963</zpid><links><homedetails>http://www.zillow.com/homedetails/1405-Edmund-Ave-Saint-Paul-MN-55104/2154963_zpid/</homedetails></links><address><street>1405
+      Edmund Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.95866</latitude><longitude>-93.159719</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1649</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>18</count></images><price>185000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2158357</zpid><links><homedetails>http://www.zillow.com/homedetails/592-Lexington-Pkwy-N-Saint-Paul-MN-55104/2158357_zpid/</homedetails></links><address><street>592
+      Lexington Pkwy N</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.959094</latitude><longitude>-93.146075</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1242</finishedSqFt><bathrooms>1.75</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>200000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2057417</zpid><links><homedetails>http://www.zillow.com/homedetails/571-State-St-Saint-Paul-MN-55107/2057417_zpid/</homedetails></links><address><street>571
+      State St</street><zipcode>55107</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.928693</latitude><longitude>-93.078953</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>1878</finishedSqFt><bathrooms>2.5</bathrooms><bedrooms>5</bedrooms></property><images><count>0</count></images><price>175000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2150954</zpid><links><homedetails>http://www.zillow.com/homedetails/1758-Carroll-Ave-Saint-Paul-MN-55104/2150954_zpid/</homedetails></links><address><street>1758
+      Carroll Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.950166</latitude><longitude>-93.17486</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6534</lotSizeSqFt><finishedSqFt>1392</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>250000</price></result><result><lastRefreshedDate>2011-05-28
+      04:54:00.0</lastRefreshedDate><property><zpid>2127160</zpid><links><homedetails>http://www.zillow.com/homedetails/1034-Victoria-St-N-Saint-Paul-MN-55103/2127160_zpid/</homedetails></links><address><street>1034
+      Victoria St N</street><zipcode>55103</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.972187</latitude><longitude>-93.136166</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1342</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>3</bedrooms></property><images><count>4</count></images><price>160000</price></result><result><lastRefreshedDate>2011-05-24
+      00:00:00.0</lastRefreshedDate><property><zpid>2052744</zpid><links><homedetails>http://www.zillow.com/homedetails/178-Congress-St-W-Saint-Paul-MN-55107/2052744_zpid/</homedetails></links><address><street>178
+      Congress St W</street><zipcode>55107</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.932064</latitude><longitude>-93.093067</longitude></address><useCode>Vacant
+      Land</useCode><lotSizeSqFt>2613</lotSizeSqFt><finishedSqFt>2613</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms></bedrooms></property><images><count>0</count></images><price>22000</price></result><result><lastRefreshedDate>2011-04-19
+      11:26:00.0</lastRefreshedDate><property><zpid>2115260</zpid><links><homedetails>http://www.zillow.com/homedetails/926-Idaho-Ave-W-Saint-Paul-MN-55117/2115260_zpid/</homedetails></links><address><street>926
+      Idaho Ave W</street><zipcode>55117</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.98985</latitude><longitude>-93.139156</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>1450</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>200000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2048739</zpid><links><homedetails>http://www.zillow.com/homedetails/2127-Goodrich-Ave-Saint-Paul-MN-55105/2048739_zpid/</homedetails></links><address><street>2127
+      Goodrich Ave</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.938168</latitude><longitude>-93.19028</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4356</lotSizeSqFt><finishedSqFt>1400</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>289600</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>1689864</zpid><links><homedetails>http://www.zillow.com/homedetails/1265-Macarthur-Ave-Saint-Paul-MN-55118/1689864_zpid/</homedetails></links><address><street>1265
+      Macarthur Ave</street><zipcode>55118</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.907948</latitude><longitude>-93.078421</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6969</lotSizeSqFt><finishedSqFt>1364</finishedSqFt><bathrooms>1.75</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>158000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2028537</zpid><links><homedetails>http://www.zillow.com/homedetails/586-Ashland-Ave-APT-3-Saint-Paul-MN-55102/2028537_zpid/</homedetails></links><address><street>586
+      Ashland Ave APT 3</street><zipcode>55102</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.944105</latitude><longitude>-93.124875</longitude></address><useCode>Condo</useCode><lotSizeSqFt>871</lotSizeSqFt><finishedSqFt>672</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>1</bedrooms></property><images><count>0</count></images><price>140000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.154</lastRefreshedDate><property><zpid>2150048</zpid><links><homedetails>http://www.zillow.com/homedetails/1684-Minnehaha-Ave-W-Saint-Paul-MN-55104/2150048_zpid/</homedetails></links><address><street>1684
+      Minnehaha Ave W</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.962603</latitude><longitude>-93.171435</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1892</finishedSqFt><bathrooms>2.5</bathrooms><bedrooms>3</bedrooms></property><images><count>12</count></images><price>229000</price></result><result><lastRefreshedDate>2011-03-12
+      00:00:00.0</lastRefreshedDate><property><zpid>2036286</zpid><links><homedetails>http://www.zillow.com/homedetails/42-Saint-Albans-St-S-APT-1B-Saint-Paul-MN-55105/2036286_zpid/</homedetails></links><address><street>42
+      Saint Albans St S APT 1B</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.940218</latitude><longitude>-93.128544</longitude></address><useCode>Condo</useCode><lotSizeSqFt>1500</lotSizeSqFt><finishedSqFt>1500</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>2</bedrooms></property><images><count>10</count></images><price>254000</price></result><result><lastRefreshedDate>2011-02-22
+      18:19:00.0</lastRefreshedDate><property><zpid>2067204</zpid><links><homedetails>http://www.zillow.com/homedetails/1347-Edgcumbe-Rd-Saint-Paul-MN-55116/2067204_zpid/</homedetails></links><address><street>1347
+      Edgcumbe Rd</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.924961</latitude><longitude>-93.150429</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>2150</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>425000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.155</lastRefreshedDate><property><zpid>2148814</zpid><links><homedetails>http://www.zillow.com/homedetails/1002-3rd-St-E-Saint-Paul-MN-55106/2148814_zpid/</homedetails></links><address><street>1002
+      3rd St E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.956498</latitude><longitude>-93.05814</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1540</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>3</bedrooms></property><images><count>18</count></images><price>234000</price></result><result><lastRefreshedDate>2011-02-08
+      13:07:00.0</lastRefreshedDate><property><zpid>2091078</zpid><links><homedetails>http://www.zillow.com/homedetails/2035-Ramlow-Pl-Saint-Paul-MN-55116/2091078_zpid/</homedetails></links><address><street>2035
+      Ramlow Pl</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.905509</latitude><longitude>-93.186353</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6250</lotSizeSqFt><finishedSqFt>1008</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>4</count></images><price>180000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.155</lastRefreshedDate><property><zpid>58748953</zpid><links><homedetails>http://www.zillow.com/homedetails/445-Wacouta-St-UNIT-408-Saint-Paul-MN-55101/58748953_zpid/</homedetails></links><address><street>445
+      Wacouta St UNIT 408</street><zipcode>55101</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.951182</latitude><longitude>-93.089499</longitude></address><useCode>Condo</useCode><lotSizeSqFt>1742</lotSizeSqFt><finishedSqFt>1251</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>1</bedrooms></property><images><count>0</count></images><price>317000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.155</lastRefreshedDate><property><zpid>2101341</zpid><links><homedetails>http://www.zillow.com/homedetails/1328-Edgerton-St-Saint-Paul-MN-55130/2101341_zpid/</homedetails></links><address><street>1328
+      Edgerton St</street><zipcode>55130</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.98132</latitude><longitude>-93.075694</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>9147</lotSizeSqFt><finishedSqFt>1451</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>175000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.155</lastRefreshedDate><property><zpid>2127030</zpid><links><homedetails>http://www.zillow.com/homedetails/740-Maryland-Ave-W-Saint-Paul-MN-55117/2127030_zpid/</homedetails></links><address><street>740
+      Maryland Ave W</street><zipcode>55117</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.977093</latitude><longitude>-93.131623</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>8712</lotSizeSqFt><finishedSqFt>784</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>3</bedrooms></property><images><count>24</count></images><price>199000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.155</lastRefreshedDate><property><zpid>2029646</zpid><links><homedetails>http://www.zillow.com/homedetails/317-Michigan-St-Saint-Paul-MN-55102/2029646_zpid/</homedetails></links><address><street>317
+      Michigan St</street><zipcode>55102</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.934958</latitude><longitude>-93.113239</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5662</lotSizeSqFt><finishedSqFt>2110</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>2</count></images><price>225000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.155</lastRefreshedDate><property><zpid>2036299</zpid><links><homedetails>http://www.zillow.com/homedetails/625-Grand-Ave-APT-7-Saint-Paul-MN-55105/2036299_zpid/</homedetails></links><address><street>625
+      Grand Ave APT 7</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.940236</latitude><longitude>-93.126663</longitude></address><useCode>Condo</useCode><lotSizeSqFt>871</lotSizeSqFt><finishedSqFt>805</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>155000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.155</lastRefreshedDate><property><zpid>72385304</zpid><links><homedetails>http://www.zillow.com/homedetails/289-5th-St-E-UNIT-301-Saint-Paul-MN-55101/72385304_zpid/</homedetails></links><address><street>289
+      5th St E UNIT 301</street><zipcode>55101</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.950411</latitude><longitude>-93.085516</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>1306</lotSizeSqFt><finishedSqFt>1600</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>2</bedrooms></property><images><count>19</count></images><price>165000</price></result><result><lastRefreshedDate>2011-09-23
+      09:01:00.0</lastRefreshedDate><property><zpid>2110582</zpid><links><homedetails>http://www.zillow.com/homedetails/1445-Frankson-Ave-Saint-Paul-MN-55108/2110582_zpid/</homedetails></links><address><street>1445
+      Frankson Ave</street><zipcode>55108</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.982679</latitude><longitude>-93.161103</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5662</lotSizeSqFt><finishedSqFt>1500</finishedSqFt><bathrooms>3.0</bathrooms><bedrooms>4</bedrooms></property><images><count>7</count></images><price>139900</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>1690195</zpid><links><homedetails>http://www.zillow.com/homedetails/1138-Smith-Ave-S-Saint-Paul-MN-55118/1690195_zpid/</homedetails></links><address><street>1138
+      Smith Ave S</street><zipcode>55118</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.911869</latitude><longitude>-93.101558</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>2400</finishedSqFt><bathrooms>1.75</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>199000</price></result><result><lastRefreshedDate>2010-11-09
+      00:00:00.0</lastRefreshedDate><property><zpid>2102614</zpid><links><homedetails>http://www.zillow.com/homedetails/2125-Doswell-Ave-Saint-Paul-MN-55108/2102614_zpid/</homedetails></links><address><street>2125
+      Doswell Ave</street><zipcode>55108</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.983355</latitude><longitude>-93.18984</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>8276</lotSizeSqFt><finishedSqFt>2924</finishedSqFt><bathrooms>4.5</bathrooms><bedrooms>4</bedrooms></property><images><count>1</count></images><price>691000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2161767</zpid><links><homedetails>http://www.zillow.com/homedetails/434-Blair-Ave-Saint-Paul-MN-55103/2161767_zpid/</homedetails></links><address><street>434
+      Blair Ave</street><zipcode>55103</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.960901</latitude><longitude>-93.118344</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4197</lotSizeSqFt><finishedSqFt>1100</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>60000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2136521</zpid><links><homedetails>http://www.zillow.com/homedetails/791-Rose-Ave-E-Saint-Paul-MN-55106/2136521_zpid/</homedetails></links><address><street>791
+      Rose Ave E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.976852</latitude><longitude>-93.067098</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1156</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>135000</price></result><result><lastRefreshedDate>2010-10-11
+      19:39:00.0</lastRefreshedDate><property><zpid>2129756754</zpid><links><homedetails>http://www.zillow.com/homedetails/2065-James-Ave-Saint-Paul-MN-55105/2129756754_zpid/</homedetails></links><address><street>2065
+      James Ave</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.92819</latitude><longitude>-93.187633</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>7200</lotSizeSqFt><finishedSqFt>2508</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>699000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2145983</zpid><links><homedetails>http://www.zillow.com/homedetails/2143-Temple-Ct-Saint-Paul-MN-55104/2145983_zpid/</homedetails></links><address><street>2143
+      Temple Ct</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.954095</latitude><longitude>-93.190943</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>1092</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>205000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2137322</zpid><links><homedetails>http://www.zillow.com/homedetails/358-Maryland-Ave-E-Saint-Paul-MN-55130/2137322_zpid/</homedetails></links><address><street>358
+      Maryland Ave E</street><zipcode>55130</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.977071</latitude><longitude>-93.085405</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>1176</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>165000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2059531</zpid><links><homedetails>http://www.zillow.com/homedetails/2191-Eleanor-Ave-Saint-Paul-MN-55116/2059531_zpid/</homedetails></links><address><street>2191
+      Eleanor Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.920938</latitude><longitude>-93.19298</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1892</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>299999</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2123442</zpid><links><homedetails>http://www.zillow.com/homedetails/290-Stinson-St-Saint-Paul-MN-55117/2123442_zpid/</homedetails></links><address><street>290
+      Stinson St</street><zipcode>55117</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.969053</latitude><longitude>-93.112363</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>3049</lotSizeSqFt><finishedSqFt>1250</finishedSqFt><bathrooms>1.75</bathrooms><bedrooms>4</bedrooms></property><images><count>7</count></images><price>175000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2110760</zpid><links><homedetails>http://www.zillow.com/homedetails/1373-Simpson-St-Saint-Paul-MN-55108/2110760_zpid/</homedetails></links><address><street>1373
+      Simpson St</street><zipcode>55108</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.98254</latitude><longitude>-93.16349</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6534</lotSizeSqFt><finishedSqFt>2186</finishedSqFt><bathrooms>3.0</bathrooms><bedrooms>4</bedrooms></property><images><count>7</count></images><price>325000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.157</lastRefreshedDate><property><zpid>2133838</zpid><links><homedetails>http://www.zillow.com/homedetails/990-Rose-Ave-E-Saint-Paul-MN-55106/2133838_zpid/</homedetails></links><address><street>990
+      Rose Ave E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.97637</latitude><longitude>-93.058825</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1090</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>150000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.158</lastRefreshedDate><property><zpid>2135008</zpid><links><homedetails>http://www.zillow.com/homedetails/1081-Reaney-Ave-Saint-Paul-MN-55106/2135008_zpid/</homedetails></links><address><street>1081
+      Reaney Ave</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.964248</latitude><longitude>-93.055078</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6534</lotSizeSqFt><finishedSqFt>1236</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>5</bedrooms></property><images><count>0</count></images><price>200000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.159</lastRefreshedDate><property><zpid>2063067</zpid><links><homedetails>http://www.zillow.com/homedetails/1870-Bayard-Ave-Saint-Paul-MN-55116/2063067_zpid/</homedetails></links><address><street>1870
+      Bayard Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.921827</latitude><longitude>-93.179445</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6534</lotSizeSqFt><finishedSqFt>2520</finishedSqFt><bathrooms>4.0</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>675000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.159</lastRefreshedDate><property><zpid>2135567</zpid><links><homedetails>http://www.zillow.com/homedetails/1619-Taylor-Ave-W-Saint-Paul-MN-55104/2135567_zpid/</homedetails></links><address><street>1619
+      Taylor Ave W</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.967968</latitude><longitude>-93.168584</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6969</lotSizeSqFt><finishedSqFt>1260</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>219000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.159</lastRefreshedDate><property><zpid>2128222</zpid><links><homedetails>http://www.zillow.com/homedetails/1040-Hubbard-Ave-Saint-Paul-MN-55104/2128222_zpid/</homedetails></links><address><street>1040
+      Hubbard Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.965443</latitude><longitude>-93.144284</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6969</lotSizeSqFt><finishedSqFt>1560</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>172000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.159</lastRefreshedDate><property><zpid>2063200</zpid><links><homedetails>http://www.zillow.com/homedetails/1605-Watson-Ave-Saint-Paul-MN-55116/2063200_zpid/</homedetails></links><address><street>1605
+      Watson Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.92453</latitude><longitude>-93.168143</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1700</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>299000</price></result><result><lastRefreshedDate>2010-07-09
+      14:56:00.0</lastRefreshedDate><property><zpid>2131022540</zpid><links><homedetails>http://www.zillow.com/homedetails/359A-Belvidere-St-E-Saint-Paul-MN-55107/2131022540_zpid/</homedetails></links><address><street>359A
+      Belvidere St E</street><zipcode>55107</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.922439</latitude><longitude>-93.070217</longitude></address><useCode>Condo</useCode><lotSizeSqFt></lotSizeSqFt><finishedSqFt>912</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>2</bedrooms></property><images><count>6</count></images><price>110000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2145114</zpid><links><homedetails>http://www.zillow.com/homedetails/671-Otsego-St-Saint-Paul-MN-55130/2145114_zpid/</homedetails></links><address><street>671
+      Otsego St</street><zipcode>55130</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.961448</latitude><longitude>-93.082094</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>3920</lotSizeSqFt><finishedSqFt>1600</finishedSqFt><bathrooms>1.75</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>150000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2133886</zpid><links><homedetails>http://www.zillow.com/homedetails/981-Jessamine-Ave-E-Saint-Paul-MN-55106/2133886_zpid/</homedetails></links><address><street>981
+      Jessamine Ave E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.975076</latitude><longitude>-93.059132</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1792</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>200000</price></result><result><lastRefreshedDate>2010-06-14
+      06:28:00.0</lastRefreshedDate><property><zpid>2058846</zpid><links><homedetails>http://www.zillow.com/homedetails/420-Mount-Curve-Blvd-Saint-Paul-MN-55105/2058846_zpid/</homedetails></links><address><street>420
+      Mount Curve Blvd</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.928943</latitude><longitude>-93.193249</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>3920</lotSizeSqFt><finishedSqFt>2400</finishedSqFt><bathrooms>2.5</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>550000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2040833</zpid><links><homedetails>http://www.zillow.com/homedetails/1541-Laurel-Ave-Saint-Paul-MN-55104/2040833_zpid/</homedetails></links><address><street>1541
+      Laurel Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.945236</latitude><longitude>-93.165325</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5662</lotSizeSqFt><finishedSqFt>1469</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>280000</price></result><result><lastRefreshedDate>2010-09-06
+      13:22:00.0</lastRefreshedDate><property><zpid>2063602</zpid><links><homedetails>http://www.zillow.com/homedetails/1596-Bayard-Ave-Saint-Paul-MN-55116/2063602_zpid/</homedetails></links><address><street>1596
+      Bayard Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.922201</latitude><longitude>-93.167834</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1008</finishedSqFt><bathrooms>2.5</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>245000</price></result><result><lastRefreshedDate>2010-06-08
+      06:35:00.0</lastRefreshedDate><property><zpid>2045076</zpid><links><homedetails>http://www.zillow.com/homedetails/1790-Selby-Ave-Saint-Paul-MN-55104/2045076_zpid/</homedetails></links><address><street>1790
+      Selby Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.946283</latitude><longitude>-93.175993</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4356</lotSizeSqFt><finishedSqFt>1396</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>1</count></images><price>275000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2053784</zpid><links><homedetails>http://www.zillow.com/homedetails/712-Delaware-Ave-Saint-Paul-MN-55107/2053784_zpid/</homedetails></links><address><street>712
+      Delaware Ave</street><zipcode>55107</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.924451</latitude><longitude>-93.105513</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6098</lotSizeSqFt><finishedSqFt>2377</finishedSqFt><bathrooms>2.75</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>250000</price></result><result><lastRefreshedDate>2010-09-18
+      10:15:00.0</lastRefreshedDate><property><zpid>2154333</zpid><links><homedetails>http://www.zillow.com/homedetails/1368-Minnehaha-Ave-W-Saint-Paul-MN-55104/2154333_zpid/</homedetails></links><address><street>1368
+      Minnehaha Ave W</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.96267</latitude><longitude>-93.158079</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4356</lotSizeSqFt><finishedSqFt>1370</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>3</count></images><price>190000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2091235</zpid><links><homedetails>http://www.zillow.com/homedetails/1764-Yorkshire-Ave-Saint-Paul-MN-55116/2091235_zpid/</homedetails></links><address><street>1764
+      Yorkshire Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.91134</latitude><longitude>-93.174792</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>8712</lotSizeSqFt><finishedSqFt>1455</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>375000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2157326</zpid><links><homedetails>http://www.zillow.com/homedetails/672-Blair-Ave-Saint-Paul-MN-55104/2157326_zpid/</homedetails></links><address><street>672
+      Blair Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.96089</latitude><longitude>-93.12857</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>3920</lotSizeSqFt><finishedSqFt>1099</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>130000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2059422</zpid><links><homedetails>http://www.zillow.com/homedetails/603-Mount-Curve-Blvd-Saint-Paul-MN-55116/2059422_zpid/</homedetails></links><address><street>603
+      Mount Curve Blvd</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.923222</latitude><longitude>-93.195558</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>11325</lotSizeSqFt><finishedSqFt>2300</finishedSqFt><bathrooms>3.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>619000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>68243255</zpid><links><homedetails>http://www.zillow.com/homedetails/500-Robert-St-N-UNIT-206-Saint-Paul-MN-55101/68243255_zpid/</homedetails></links><address><street>500
+      Robert St N UNIT 206</street><zipcode>55101</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.951286</latitude><longitude>-93.094024</longitude></address><useCode>Condo</useCode><lotSizeSqFt>871</lotSizeSqFt><finishedSqFt>871</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms></bedrooms></property><images><count>0</count></images><price>159000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2063746</zpid><links><homedetails>http://www.zillow.com/homedetails/1667-Highland-Pkwy-Saint-Paul-MN-55116/2063746_zpid/</homedetails></links><address><street>1667
+      Highland Pkwy</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.920018</latitude><longitude>-93.170751</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5662</lotSizeSqFt><finishedSqFt>2509</finishedSqFt><bathrooms>1.25</bathrooms><bedrooms>4</bedrooms></property><images><count>1</count></images><price>500000</price></result><result><lastRefreshedDate>2010-12-02
+      19:40:00.0</lastRefreshedDate><property><zpid>2115153</zpid><links><homedetails>http://www.zillow.com/homedetails/1468-Saint-Albans-St-N-Saint-Paul-MN-55117/2115153_zpid/</homedetails></links><address><street>1468
+      Saint Albans St N</street><zipcode>55117</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.985346</latitude><longitude>-93.128393</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1790</finishedSqFt><bathrooms>3.0</bathrooms><bedrooms>3</bedrooms></property><images><count>2</count></images><price>260000</price></result><result><lastRefreshedDate>2010-01-16
+      07:05:00.0</lastRefreshedDate><property><zpid>2133920388</zpid><links><homedetails>http://www.zillow.com/homedetails/42-Saint-Albans-St-S-APT-6-Saint-Paul-MN-55105/2133920388_zpid/</homedetails></links><address><street>42
+      Saint Albans St S APT 6</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.940222</latitude><longitude>-93.128468</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt></lotSizeSqFt><finishedSqFt></finishedSqFt><bathrooms></bathrooms><bedrooms></bedrooms></property><images><count>0</count></images><price>275000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>81751329</zpid><links><homedetails>http://www.zillow.com/homedetails/240-Spring-St-UNIT-307-Saint-Paul-MN-55102/81751329_zpid/</homedetails></links><address><street>240
+      Spring St UNIT 307</street><zipcode>55102</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.93967</latitude><longitude>-93.099909</longitude></address><useCode>Condo</useCode><lotSizeSqFt>871</lotSizeSqFt><finishedSqFt>752</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>1</bedrooms></property><images><count>0</count></images><price>230000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2101313</zpid><links><homedetails>http://www.zillow.com/homedetails/1381-Searle-St-Saint-Paul-MN-55130/2101313_zpid/</homedetails></links><address><street>1381
+      Searle St</street><zipcode>55130</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.982754</latitude><longitude>-93.075123</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1490</finishedSqFt><bathrooms>1.25</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>250000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.160</lastRefreshedDate><property><zpid>2108833</zpid><links><homedetails>http://www.zillow.com/homedetails/1459-Maryland-Ave-E-Saint-Paul-MN-55106/2108833_zpid/</homedetails></links><address><street>1459
+      Maryland Ave E</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.977922</latitude><longitude>-93.038805</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>10890</lotSizeSqFt><finishedSqFt>465</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>1</bedrooms></property><images><count>0</count></images><price>200000</price></result><result><lastRefreshedDate>2011-04-06
+      18:41:00.0</lastRefreshedDate><property><zpid>2127369</zpid><links><homedetails>http://www.zillow.com/homedetails/687-Como-Ave-Saint-Paul-MN-55103/2127369_zpid/</homedetails></links><address><street>687
+      Como Ave</street><zipcode>55103</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.971861</latitude><longitude>-93.128555</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>9147</lotSizeSqFt><finishedSqFt>988</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>2</bedrooms></property><images><count>3</count></images><price>167000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.161</lastRefreshedDate><property><zpid>1691242</zpid><links><homedetails>http://www.zillow.com/homedetails/234-Hurley-Ave-E-Saint-Paul-MN-55118/1691242_zpid/</homedetails></links><address><street>234
+      Hurley Ave E</street><zipcode>55118</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.918494</latitude><longitude>-93.075419</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>656</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>205000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.161</lastRefreshedDate><property><zpid>2097444</zpid><links><homedetails>http://www.zillow.com/homedetails/1575-Park-St-Saint-Paul-MN-55117/2097444_zpid/</homedetails></links><address><street>1575
+      Park St</street><zipcode>55117</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.988693</latitude><longitude>-93.103978</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>7405</lotSizeSqFt><finishedSqFt>1238</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>2</count></images><price>160000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.161</lastRefreshedDate><property><zpid>2063001</zpid><links><homedetails>http://www.zillow.com/homedetails/690-Wilder-St-S-B-Saint-Paul-MN-55116/2063001_zpid/</homedetails></links><address><street>690
+      Wilder St S # B</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.92058</latitude><longitude>-93.185623</longitude></address><useCode>Miscellaneous</useCode><lotSizeSqFt>3484</lotSizeSqFt><finishedSqFt>1396</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>275000</price></result><result><lastRefreshedDate>2011-02-25
+      08:26:00.0</lastRefreshedDate><property><zpid>2028710</zpid><links><homedetails>http://www.zillow.com/homedetails/421-Holly-Ave-Saint-Paul-MN-55102/2028710_zpid/</homedetails></links><address><street>421
+      Holly Ave</street><zipcode>55102</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.943686</latitude><longitude>-93.117762</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>8712</lotSizeSqFt><finishedSqFt>2063</finishedSqFt><bathrooms>1.25</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>500000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.161</lastRefreshedDate><property><zpid>2053295</zpid><links><homedetails>http://www.zillow.com/homedetails/525-Smith-Ave-S-Saint-Paul-MN-55107/2053295_zpid/</homedetails></links><address><street>525
+      Smith Ave S</street><zipcode>55107</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.93007</latitude><longitude>-93.102336</longitude></address><useCode>Multi
+      Family</useCode><lotSizeSqFt>5662</lotSizeSqFt><finishedSqFt>1465</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>225000</price></result><result><lastRefreshedDate>2009-10-01
+      20:43:00.0</lastRefreshedDate><property><zpid>2136325733</zpid><links><homedetails>http://www.zillow.com/homedetails/721-Summit-Ave-Saint-Paul-MN-55105/2136325733_zpid/</homedetails></links><address><street>721
+      Summit Ave</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.9416</latitude><longitude>-93.130384</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt></lotSizeSqFt><finishedSqFt></finishedSqFt><bathrooms>3.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>600000</price></result><result><lastRefreshedDate>2010-09-22
+      09:21:00.0</lastRefreshedDate><property><zpid>2062856</zpid><links><homedetails>http://www.zillow.com/homedetails/1838-James-Ave-Saint-Paul-MN-55105/2062856_zpid/</homedetails></links><address><street>1838
+      James Ave</street><zipcode>55105</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.927688</latitude><longitude>-93.178026</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1700</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>360000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.161</lastRefreshedDate><property><zpid>2155097</zpid><links><homedetails>http://www.zillow.com/homedetails/1523-Iglehart-Ave-Saint-Paul-MN-55104/2155097_zpid/</homedetails></links><address><street>1523
+      Iglehart Ave</street><zipcode>55104</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.949625</latitude><longitude>-93.164565</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1200</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>2</bedrooms></property><images><count>0</count></images><price>320000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.164</lastRefreshedDate><property><zpid>2102911</zpid><links><homedetails>http://www.zillow.com/homedetails/1261-Cleveland-Ave-N-APT-2-A-Saint-Paul-MN-55108/2102911_zpid/</homedetails></links><address><street>1261
+      Cleveland Ave N APT 2-A</street><zipcode>55108</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.979116</latitude><longitude>-93.187697</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>435</lotSizeSqFt><finishedSqFt>540</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>1</bedrooms></property><images><count>0</count></images><price>120000</price></result><result><lastRefreshedDate>2009-08-11
+      09:29:00.0</lastRefreshedDate><property><zpid>2137379</zpid><links><homedetails>http://www.zillow.com/homedetails/443-Jessamine-Ave-E-Saint-Paul-MN-55130/2137379_zpid/</homedetails></links><address><street>443
+      Jessamine Ave E</street><zipcode>55130</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.974914</latitude><longitude>-93.081781</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1092</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>175000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.164</lastRefreshedDate><property><zpid>2131529</zpid><links><homedetails>http://www.zillow.com/homedetails/1584-Ross-Ave-Saint-Paul-MN-55106/2131529_zpid/</homedetails></links><address><street>1584
+      Ross Ave</street><zipcode>55106</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.965586</latitude><longitude>-93.033682</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>12632</lotSizeSqFt><finishedSqFt>1204</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>205000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.164</lastRefreshedDate><property><zpid>2114363</zpid><links><homedetails>http://www.zillow.com/homedetails/2089-Hawthorne-Ave-E-Saint-Paul-MN-55119/2114363_zpid/</homedetails></links><address><street>2089
+      Hawthorne Ave E</street><zipcode>55119</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.979331</latitude><longitude>-93.012109</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>6534</lotSizeSqFt><finishedSqFt>1766</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>7</count></images><price>249900</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.164</lastRefreshedDate><property><zpid>2053778</zpid><links><homedetails>http://www.zillow.com/homedetails/484-Morton-St-W-Saint-Paul-MN-55107/2053778_zpid/</homedetails></links><address><street>484
+      Morton St W</street><zipcode>55107</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.92544</latitude><longitude>-93.105543</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5662</lotSizeSqFt><finishedSqFt>2241</finishedSqFt><bathrooms>1.5</bathrooms><bedrooms>4</bedrooms></property><images><count>0</count></images><price>400000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.164</lastRefreshedDate><property><zpid>68254616</zpid><links><homedetails>http://www.zillow.com/homedetails/1126-Norton-St-Saint-Paul-MN-55117/68254616_zpid/</homedetails></links><address><street>1126
+      Norton St</street><zipcode>55117</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.975041</latitude><longitude>-93.11965</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>7850</lotSizeSqFt><finishedSqFt>1578</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>3</bedrooms></property><images><count>0</count></images><price>215000</price></result></makeMeMove><forSaleByOwner><count>2</count><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>81751352</zpid><links><homedetails>http://www.zillow.com/homedetails/406-Wacouta-St-UNIT-408-Saint-Paul-MN-55101/81751352_zpid/</homedetails></links><address><street>406
+      Wacouta St UNIT 408</street><zipcode>55101</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.950471</latitude><longitude>-93.087642</longitude></address><useCode>Condo</useCode><lotSizeSqFt>720</lotSizeSqFt><finishedSqFt>720</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>1</bedrooms></property><images><count>13</count></images><price>149900</price></result><result><lastRefreshedDate>2011-08-08
+      08:42:00.0</lastRefreshedDate><property><zpid>2125054662</zpid><links><homedetails>http://www.zillow.com/homedetails/954-Wilder-Street-South-Saint-Paul-MN-55116/2125054662_zpid/</homedetails></links><address><street>954
+      Wilder Street South</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.912934</latitude><longitude>-93.183498</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5000</lotSizeSqFt><finishedSqFt>802</finishedSqFt><bathrooms>1.0</bathrooms><bedrooms>2</bedrooms></property><images><count>6</count></images><price>174900</price></result></forSaleByOwner><forSaleByAgent><count>5</count><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>2091215</zpid><links><homedetails>http://www.zillow.com/homedetails/1806-Montreal-Ave-Saint-Paul-MN-55116/2091215_zpid/</homedetails></links><address><street>1806
+      Montreal Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.912228</latitude><longitude>-93.176449</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>7840</lotSizeSqFt><finishedSqFt>1880</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>25</count></images><price>249000</price></result><result><lastRefreshedDate>2011-11-16
+      18:02:16.153</lastRefreshedDate><property><zpid>1725716</zpid><links><homedetails>http://www.zillow.com/homedetails/3220-48th-Ave-S-Minneapolis-MN-55406/1725716_zpid/</homedetails></links><address><street>3220
+      48th Ave S</street><zipcode>55406</zipcode><city>Minneapolis</city><state>MN</state><latitude>44.944398</latitude><longitude>-93.205479</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>4791</lotSizeSqFt><finishedSqFt>1635</finishedSqFt><bathrooms>1.75</bathrooms><bedrooms>3</bedrooms></property><images><count>22</count></images><price>279000</price></result><result><lastRefreshedDate>2011-09-22
+      07:49:00.0</lastRefreshedDate><property><zpid>2089655</zpid><links><homedetails>http://www.zillow.com/homedetails/1588-Hillcrest-Ave-Saint-Paul-MN-55116/2089655_zpid/</homedetails></links><address><street>1588
+      Hillcrest Ave</street><zipcode>55116</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.916777</latitude><longitude>-93.167568</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>7405</lotSizeSqFt><finishedSqFt>2188</finishedSqFt><bathrooms>3.0</bathrooms><bedrooms>4</bedrooms></property><images><count>12</count></images><price>290000</price></result><result><lastRefreshedDate>2011-09-11
+      18:02:00.0</lastRefreshedDate><property><zpid>2114548</zpid><links><homedetails>http://www.zillow.com/homedetails/675-California-Ave-W-Saint-Paul-MN-55117/2114548_zpid/</homedetails></links><address><street>675
+      California Ave W</street><zipcode>55117</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.991126</latitude><longitude>-93.128473</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>5227</lotSizeSqFt><finishedSqFt>1512</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>2</bedrooms></property><images><count>12</count></images><price>179999</price></result><result><lastRefreshedDate>2011-02-05
+      00:30:00.0</lastRefreshedDate><property><zpid>2052587</zpid><links><homedetails>http://www.zillow.com/homedetails/23-Isabel-St-W-Saint-Paul-MN-55107/2052587_zpid/</homedetails></links><address><street>23
+      Isabel St W</street><zipcode>55107</zipcode><city>Saint Paul</city><state>MN</state><latitude>44.933303</latitude><longitude>-93.086258</longitude></address><useCode>Single
+      Family</useCode><lotSizeSqFt>13068</lotSizeSqFt><finishedSqFt>3822</finishedSqFt><bathrooms>2.0</bathrooms><bedrooms>4</bedrooms></property><images><count>17</count></images><price>119900</price></result></forSaleByAgent><reportForSale><count>0</count></reportForSale></response></RegionPostings:regionPostings><!--
+      H:117  T:68ms  S:42497  R:Wed Nov 16 18:02:16 PST 2011  B:3.0.130384.20111116063606-comp_rel_a
+      -->'
+    http_version: '1.1'

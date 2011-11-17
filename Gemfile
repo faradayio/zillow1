@@ -2,20 +2,27 @@ source :rubygems
 
 gem 'rails', '3.0.9'
 
+gem 'cache_method'
+gem 'conversions'
+gem 'crack'
+gem 'dalli'
+gem 'data_miner'
+gem 'grafico'
+gem 'hoptoad_notifier'
+gem 'httparty'
+gem 'weary'
+
 group :development do
-  gem 'thin'
   gem 'mysql2', '~>0.2.0'
+  gem 'thin'
 end
 
 group :production do
   gem 'pg'
 end
 
-gem 'data_miner'
-gem 'weary'
-gem 'grafico'
-gem 'conversions'
-gem 'dalli'
-gem 'cache_method'
-gem 'hoptoad_notifier'
-gem 'rake', '0.8.7'
+group :test do
+  gem 'fakeweb'
+  gem 'rspec-rails'
+  gem 'vcr'
+end
