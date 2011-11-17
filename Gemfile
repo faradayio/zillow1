@@ -3,6 +3,7 @@ source :rubygems
 gem 'rails', '3.0.9'
 
 gem 'cache_method'
+gem 'carbon'
 gem 'conversions'
 gem 'crack'
 gem 'dalli'
@@ -10,7 +11,6 @@ gem 'data_miner'
 gem 'grafico'
 gem 'hoptoad_notifier'
 gem 'httparty'
-gem 'weary'
 
 group :development do
   gem 'mysql2', '~>0.2.0'

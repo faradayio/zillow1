@@ -6,6 +6,15 @@ class Listing < ActiveRecord::Base
 
   validates_presence_of :zpid
 
+  include Carbon
+  emit_as :residence do
+    provide :zipcode, :as => :zip_code
+    provide :floorspace_estimate
+    provide :bedrooms
+    provide :bathrooms
+    provide :residence_class
+  end
+
   def self.parse(data)
     data = data['property']
     return nil if data['usecode'] =~ /lot/ || data['usecode'] =~ /multi/ # skip irrelevant home types
@@ -25,9 +34,13 @@ class Listing < ActiveRecord::Base
 
     listing
   end
+
+  def floorspace_estimate
+    floorspace.square_feet.to(:square_meters) if floorspace
+  end
   
   def calculate_emission!
-    update_attributes! :emission => EmissionEstimate.of(self)
+    update_attributes! :emission => emission_estimate.to_f
   end
   
   def residence_class
