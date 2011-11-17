@@ -19,7 +19,8 @@ class ZillowSearch
   def reportForSale; posting_group('reportForSale'); end
 
   def posting_group(name)
-    (postings[name] && postings[name]['result']) ? postings[name]['result'] : []
+    data = (postings[name] && postings[name]['result']) ? postings[name]['result'] : []
+    data.is_a?(Hash) ? [data] : data
   end
   
   def perform

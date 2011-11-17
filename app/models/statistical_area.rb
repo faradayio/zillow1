@@ -55,8 +55,6 @@ class StatisticalArea < ActiveRecord::Base
         listings.emission IS NOT NULL
     }
     result = connection.select_value(sql)
-    puts "#{name}, #{day}, got result #{result.inspect}"
-    puts "result.to_s matches? #{(result.to_s =~ /\d/ ? result.to_f : nil).inspect}"
     result.to_s =~ /\d/ ? result.to_f : nil
   end
   cache_method :average_emission, 50.hours
