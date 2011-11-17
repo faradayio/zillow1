@@ -3,7 +3,7 @@ class StatisticalArea < ActiveRecord::Base
   
   has_many :listings
   has_many :appearances, :through => :listings
-  
+
   data_miner do
     import  'Zillow statistical areas',
             :url => 'http://www.zillow.com/static/xls/Zestimate_Accuracy_December_31_2010.xls',
@@ -12,38 +12,21 @@ class StatisticalArea < ActiveRecord::Base
       key 'name', :field_name => 'CMSA'
     end
   end
-  
+
   # sabshere 2/21/11
   # for cache_method
   def hash
     name.hash
   end
-  
-  def url_encoded_name
-    name.sub(',', '').gsub(' ', '+')
-  end
-  
+
   def identifier
     name.downcase.gsub(/[,\.]/, '').gsub(/[ -]/, '_')
   end
-  
+
   def fetch_and_store_listings!
-    ZillowSearch.new(url_encoded_name).results.each do |result|
-      next if %w(lot multiFamily).include? result['homeType'] # skip irrelevant home types
-      next if result['floorspace'].to_i > 10000 # skip excessively large properties
-      next if result['bathrooms'].to_i > 20 # skip excessively large properties
-      next if result['bedrooms'].to_i > 20 # skip excessively large properties
-
-      zpid = Listing.zpid_from_url(result['detailPageLink'])
-
-      listing = listings.find_or_initialize_by_zpid(zpid)
-      listing.zipcode = result['address']['zipcode']
-      listing.bathrooms = result['bathrooms'].to_f.nonzero?
-      listing.bedrooms = result['bedrooms'].to_i.nonzero?
-      listing.floorspace = result['finishedSqFt'].to_i.nonzero?
-
-      home_type = (result['homeType'] == 'unknown' ? nil : result['homeType'])
-      listing.zillow_home_type = home_type
+    ZillowSearch.new(name).results.each do |result|
+      listing = Listing.parse result
+      next if listing.nil?
 
       changed = listing.changed?
 
@@ -72,7 +55,9 @@ class StatisticalArea < ActiveRecord::Base
         listings.emission IS NOT NULL
     }
     result = connection.select_value(sql)
-    result =~ /\d/ ? result.to_f : nil
+    puts "#{name}, #{day}, got result #{result.inspect}"
+    puts "result.to_s matches? #{(result.to_s =~ /\d/ ? result.to_f : nil).inspect}"
+    result.to_s =~ /\d/ ? result.to_f : nil
   end
   cache_method :average_emission, 50.hours
   

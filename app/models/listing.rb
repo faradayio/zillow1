@@ -5,6 +5,26 @@ class Listing < ActiveRecord::Base
   has_many :appearances
 
   validates_presence_of :zpid
+
+  def self.parse(data)
+    data = data['property']
+    return nil if data['usecode'] =~ /lot/ || data['usecode'] =~ /multi/ # skip irrelevant home types
+    return nil if data['floorspace'].to_i > 10000 # skip excessively large properties
+    return nil if data['bathrooms'].to_i > 20 # skip excessively large properties
+    return nil if data['bedrooms'].to_i > 20 # skip excessively large properties
+
+    zpid = data['zpid']
+    listing = Listing.find_or_initialize_by_zpid(zpid)
+    listing.zipcode = data['address']['zipcode']
+    listing.bathrooms = data['bathrooms'].to_f.nonzero?
+    listing.bedrooms = data['bedrooms'].to_i.nonzero?
+    listing.floorspace = data['finishedSqFt'].to_i.nonzero?
+
+    home_type = (data['useCode'] == 'unknown' ? nil : data['useCode'])
+    listing.zillow_home_type = home_type
+
+    listing
+  end
   
   def calculate_emission!
     update_attributes! :emission => EmissionEstimate.of(self)

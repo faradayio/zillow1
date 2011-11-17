@@ -11,6 +11,7 @@ describe ZillowSearch do
       end
 
       results.count.should == 99
+      results.first['property']['zpid'].should =~ /[0-9]/
     end
   end
 end
