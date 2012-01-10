@@ -9,6 +9,7 @@ class Appearance < ActiveRecord::Base
     end
     
     def on(day)
+      day = Time.parse day if day.is_a?(String)
       scoped :conditions => { :appeared_at => day.to_time..day.tomorrow.to_time }
     end
   end
