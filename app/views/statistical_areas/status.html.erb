@@ -24,4 +24,3 @@ Days (<%= days.length %>): <%= days.join("\n ") %>
 </table>
 
 
-<table><%= Rails.cache.stats.values[0].map { |k, v| "<tr><th>#{k}</td><th>#{v}</td></tr>"}.join("\n") %></table>

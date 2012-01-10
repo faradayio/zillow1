@@ -9,7 +9,7 @@ class Appearance < ActiveRecord::Base
     end
     
     def on(day)
-      scoped :conditions => { :appeared_at => date.to_time..date.tomorrow.to_time }
+      scoped :conditions => { :appeared_at => day.to_time..day.tomorrow.to_time }
     end
   end
 
